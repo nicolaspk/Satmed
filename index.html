@@ -3,40 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <title>Satmed - Triagem Espacial</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
-    <header>
-        <h1>Satmed</h1>
-        <p>Conectando vidas e encurtando distâncias via Direct-to-Cell</p>
-        <img src="./img/satelite-emergencia.jpg" alt="Ilustração de um satélite enviando sinal de emergência para a Terra">
+    <header class="cabecalho-principal">
+        <nav class="menu-principal" aria-label="Navegação Principal">
+            <div class="marca-startup">Satmed 🛰️</div>
+            <div class="links-menu">
+                <a href="index.html" class="ativo">Início</a>
+                <a href="paginas/sobre.html">Sobre a Solução</a>
+                <a href="paginas/faq.html">FAQ</a>
+                <a href="paginas/contato.html">Contato</a>
+                <a href="paginas/integrantes.html">Integrantes</a>
+            </div>
+        </nav>
+
+        <div class="hero-banner">
+            <div class="hero-texto">
+                <h1>Economia Espacial Salvando Vidas</h1>
+                <p>O Satmed conecta vítimas de desastres naturais às equipes de resgate, operando 100% offline via rede de satélites Direct-to-Cell. Quando a cidade apaga, o espaço ilumina.</p>
+                <a href="#area-simulacao" class="btn-ancora">Iniciar Simulação de Resgate</a>
+            </div>
+            <div class="hero-imagem">
+                <img src="./img/satelite-emergencia.jpg" alt="Ilustração de um satélite enviando sinal de emergência para a Terra">
+            </div>
+        </div>
     </header>
 
     <main>
-        <section class="area-triagem">
-            <h2>Triagem Inteligente</h2>
-            <p>Modo Offline Ativo. Transmissão de pacote ultraleve de texto e GPS via satélite.</p>
+        <section id="area-simulacao" class="area-triagem">
+            <div class="cabecalho-secao">
+                <h2>Terminal de Triagem D2D</h2>
+                <p>Simulação de Modo Offline. Selecione a situação da vítima para envio do pacote de dados ultraleve.</p>
+            </div>
             
-            <form>
-                <label>Sintomas do paciente:</label>
-                <input type="text" aria-label="Campo para descrever os sintomas da vítima">
-                <button type="button">Transmitir Pedido de Socorro</button>
+            <form class="formulario-triagem" id="form-triagem">
+                <label for="situacao">Qual a situação clínica atual?</label>
+                <select id="situacao" name="situacao">
+                    <option value="" disabled selected>Selecione a opção que melhor descreve o estado...</option>
+                    <option value="vermelho">🔴 Trauma Severo / Hemorragia Ativa</option>
+                    <option value="amarelo">🟡 Dificuldade Respiratória / Fratura Fechada</option>
+                    <option value="amarelo2">🟡 Risco de Desabamento / Isolamento Total</option>
+                    <option value="verde">🟢 Apenas Escoriações / Em Local Seguro</option>
+                </select>
+
+                <div class="dados-rastreio">
+                    <p class="titulo-gps">📍 Coordenadas de GPS Obtidas</p>
+                    <p class="valor-gps">LAT: -23.5505 | LON: -46.6333</p>
+                    <span>Status: Conexão orbital estabelecida. Criptografia ativa.</span>
+                </div>
+
+                <button type="button" id="btn-transmitir" class="btn-principal">Transmitir Pedido de Socorro via Satélite</button>
             </form>
+
+            <div id="painel-simulacao" class="painel-oculto"></div>
         </section>
 
         <section class="area-riscos">
             <details>
-                <summary>Clique para visualizar os Níveis de Classificação</summary>
-                <p class="risco-vermelho">🚨 Risco Vermelho (#001 - Emergência Extrema)</p>
-                <p class="risco-amarelo">⚠️ Risco Amarelo (#002 - Atenção/Urgência)</p>
-                <p class="risco-verde">🟢 Risco Verde (#003 - Não-urgente/Estável)</p>
+                <summary>Consultar Manual de Protocolo de Cores (Defesa Civil)</summary>
+                <div class="niveis-container">
+                    <div class="card-risco risco-vermelho">
+                        <h3>🚨 Risco Vermelho (#001)</h3>
+                        <p>Emergência Extrema. Despacho imediato de UTI Móvel ou Helicóptero Aeromédico.</p>
+                    </div>
+                    <div class="card-risco risco-amarelo">
+                        <h3>⚠️ Risco Amarelo (#002)</h3>
+                        <p>Atenção/Urgência. Equipes terrestres direcionadas assim que as vias forem liberadas.</p>
+                    </div>
+                    <div class="card-risco risco-verde">
+                        <h3>🟢 Risco Verde (#003)</h3>
+                        <p>Não-urgente/Estável. Orientação remota ativada. Aguardar resgate secundário.</p>
+                    </div>
+                </div>
             </details>
         </section>
     </main>
 
-    <footer>
-        <p>Global Solution 2026/1 - Economia Espacial | ODS 9, 11 e 13</p>
+    <footer class="rodape-principal">
+        <nav aria-label="Navegação de Rodapé">
+            <p>Global Solution 2026/1 - Economia Espacial | Alinhado aos ODS 9, 11 e 13 da ONU</p>
+        </nav>
     </footer>
+
     <script src="./js/script.js"></script>
 </body>
 </html>

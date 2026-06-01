@@ -1,15 +1,160 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    color: #ffffff;
-    background-image: url('/img/espaco-fundo.jpg');
-    background-color: #050814;
-    background-size: cover;
-    animation-name: moverFundo;
-    animation-duration: 30s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+/* CABEÇALHO DO TERMINAL */
+.cabecalho-secao {
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+    padding-bottom: 1.5rem;
 }
 
+.cabecalho-secao h2 {
+    font-size: 2.5rem;
+    color: #ffffff;
+}
+
+.cabecalho-secao p {
+    color: #aaaaaa;
+    font-size: 1.1rem;
+}
+
+/* CAIXA DE SELEÇÃO */
+select {
+    width: 100%;
+    padding: 18px;
+    margin: 15px 0 30px 0;
+    background-color: #050814;
+    color: #ffffff;
+    border: 2px solid #1c2841;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: border 0.3s ease;
+}
+
+select:focus {
+    outline: none;
+    border: 2px solid #00d4ff;
+    box-shadow: 0px 0px 15px rgba(0, 212, 255, 0.2);
+}
+
+/* CAIXA DE DADOS DE GPS */
+.dados-rastreio {
+    background-color: rgba(11, 17, 32, 0.8);
+    border: 1px solid #1c2841;
+    border-left: 5px solid #00d4ff;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+}
+
+.titulo-gps {
+    font-size: 1.1rem;
+    color: #00d4ff;
+    margin-bottom: 5px;
+}
+
+.valor-gps {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.dados-rastreio span {
+    font-size: 0.9rem;
+    color: #4caf50; /* Cor verde indicando sucesso na conexão */
+}
+
+/* BOTÃO DE TRANSMISSÃO */
+.btn-principal {
+    width: 100%;
+    padding: 20px;
+    font-size: 1.3rem;
+    border-radius: 8px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* =========================================
+   ÁREA DE RESPOSTA DO JS (Simulação)
+   ========================================= */
+.painel-oculto {
+    display: none;
+    margin-top: 30px;
+}
+
+.animacao-envio {
+    text-align: center;
+    background-color: rgba(11, 17, 32, 0.9);
+    padding: 40px;
+    border: 1px dashed #00d4ff;
+    border-radius: 10px;
+}
+
+.animacao-envio p {
+    font-size: 1.4rem;
+    color: #00d4ff;
+    animation: piscar 1.5s infinite;
+    margin: 10px 0;
+}
+
+@keyframes piscar {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+
+/* CARTÃO DE RESPOSTA MÉDICA */
+.resultado-triagem {
+    padding: 20px;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+}
+
+.resultado-triagem h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.resposta-hospital {
+    background-color: #050814;
+    border: 2px solid;
+    padding: 30px;
+    border-radius: 0 0 10px 10px;
+}
+
+/* Aplicando as cores das bordas baseadas na classe pai inserida via JS */
+.risco-vermelho + .resposta-hospital { border-color: #ff4d4d; border-top: none; }
+.risco-amarelo + .resposta-hospital { border-color: #ffcc00; border-top: none; }
+.risco-verde + .resposta-hospital { border-color: #4caf50; border-top: none; }
+
+.resposta-hospital h4 {
+    color: #ffffff;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.resposta-hospital p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #cccccc;
+}
+
+/* CARDS DO DETAILS (MANUAL) */
+.niveis-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card-risco {
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.card-risco h3 { margin-top: 0; font-size: 1.3rem; }
+.card-risco p { font-size: 1rem; color: #f0f0f0; margin-bottom: 0; }

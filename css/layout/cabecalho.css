@@ -1,0 +1,29 @@
+
+header {
+    background-color: rgba(11, 17, 32, 0.9);
+    padding: 2em;
+    text-align: center;
+    border-bottom: 4px solid #00d4ff;
+}
+
+header h1 {
+    font-size: 3em;
+    margin: 0;
+    color: #00d4ff;
+}
+
+header img {
+    max-width: 100%;
+    width: 250px;
+    margin-top: 1em;
+    animation: flutuarSatelite 3s ease-in-out infinite alternate;
+}
+
+@keyframes flutuarSatelite {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-20px);
+    }
+}

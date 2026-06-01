@@ -15,3 +15,114 @@ body {
     animation-direction: alternate;
 }
 
+/* KEYFRAMES PARA O FUNDO SE MOVENDO */
+@keyframes moverFundo {
+    from {
+        background-position: 0% 0%;
+    }
+    to {
+        background-position: 100% 100%;
+    }
+}
+
+
+
+/* CONTEÚDO PRINCIPAL */
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+/* BOX MODEL DAS SEÇÕES */
+.area-triagem, .area-riscos {
+    background-color: rgba(28, 40, 65, 0.95);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 2px solid #00d4ff;
+}
+
+.area-triagem h2 {
+    color: #00d4ff;
+    margin-top: 0;
+}
+
+/* FORMULÁRIO E ELEMENTOS DE INTERAÇÃO */
+form {
+    margin-top: 1.5rem;
+}
+
+form label {
+    font-size: 1.2rem;
+    display: block;
+}
+
+/* SELETORES DE ATRIBUTO  */
+input[type="text"] {
+    width: 95%;
+    padding: 1em;
+    margin: 1em 0;
+    font-size: 1rem;
+    border: 1px solid #00d4ff;
+    background-color: #0b1120;
+    color: #ffffff;
+}
+
+button {
+    background-color: #00d4ff;
+    color: #050814;
+    padding: 1em 2em;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* PSEUDOCLASSES */
+button:hover {
+    background-color: #0099cc;
+    color: #ffffff;
+}
+
+/* CORES DOS NÍVEIS DE RISCO */
+.risco-vermelho {
+    background-color: #ff4d4d;
+    color: #ffffff;
+    padding: 1em;
+    margin-top: 1em;
+    font-size: 1.2rem;
+    border: 2px solid #cc0000;
+}
+
+.risco-amarelo {
+    background-color: #ffcc00;
+    color: #000000;
+    padding: 1em;
+    margin-top: 1em;
+    font-size: 1.2rem;
+    border: 2px solid #b38f00;
+}
+
+.risco-verde {
+    background-color: #4caf50;
+    color: #ffffff;
+    padding: 1em;
+    margin-top: 1em;
+    font-size: 1.2rem;
+    border: 2px solid #2e7d32;
+}
+
+details {
+    padding: 1em;
+    background-color: #0b1120;
+    border: 1px solid #00d4ff;
+}
+
+details summary {
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #00d4ff;
+}
+
+
+

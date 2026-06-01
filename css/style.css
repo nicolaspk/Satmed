@@ -1,25 +1,36 @@
-
-
-/* KEYFRAMES PARA O FUNDO SE MOVENDO */
-@keyframes moverFundo {
-    from {
-        background-position: 0% 0%;
-    }
-    to {
-        background-position: 100% 100%;
-    }
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    background-color: #050814;
+    background-image: url('../img/espaco-fundo.jpg');
+    background-size: cover;
+    background-attachment: fixed; 
+    animation-name: moverFundo;
+    animation-duration: 40s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
 
+@keyframes moverFundo {
+    from { background-position: 0% 0%; }
+    to { background-position: 100% 100%; }
+}
 
-/* CONTEÚDO PRINCIPAL */
 main {
-    max-width: 800px;
+    max-width: 1000px; 
     margin: 2rem auto;
     padding: 1rem;
 }
 
-/* BOX MODEL DAS SEÇÕES */
+/* BOX MODEL DAS SEÇÕES GERAIS */
 .area-triagem, .area-riscos {
     background-color: rgba(28, 40, 65, 0.95);
     padding: 2rem;
@@ -32,7 +43,7 @@ main {
     margin-top: 0;
 }
 
-/* FORMULÁRIO E ELEMENTOS DE INTERAÇÃO */
+/* FORMULÁRIO BASE */
 form {
     margin-top: 1.5rem;
 }
@@ -42,9 +53,8 @@ form label {
     display: block;
 }
 
-/* SELETORES DE ATRIBUTO  */
 input[type="text"] {
-    width: 95%;
+    width: 100%;
     padding: 1em;
     margin: 1em 0;
     font-size: 1rem;
@@ -61,9 +71,9 @@ button {
     font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-/* PSEUDOCLASSES */
 button:hover {
     background-color: #0099cc;
     color: #ffffff;
@@ -97,6 +107,7 @@ button:hover {
     border: 2px solid #2e7d32;
 }
 
+/* COMPONENTES HTML GERAIS */
 details {
     padding: 1em;
     background-color: #0b1120;
@@ -107,22 +118,4 @@ details summary {
     font-size: 1.2rem;
     cursor: pointer;
     color: #00d4ff;
-}
-
-
-
-/* Transforma o menu em um Flex Container */
-.menu-principal {
-    display: flex;
-    flex-direction: row; 
-    justify-content: center; 
-    background-color: #050814;
-    padding: 10px;
-}
-
-.menu-principal a {
-    margin: 0 15px; 
-    color: #00d4ff;
-    text-decoration: none;
-    font-weight: bold;
 }

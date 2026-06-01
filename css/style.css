@@ -111,3 +111,18 @@ details summary {
 
 
 
+/* Transforma o menu em um Flex Container */
+.menu-principal {
+    display: flex;
+    flex-direction: row; 
+    justify-content: center; 
+    background-color: #050814;
+    padding: 10px;
+}
+
+.menu-principal a {
+    margin: 0 15px; 
+    color: #00d4ff;
+    text-decoration: none;
+    font-weight: bold;
+}

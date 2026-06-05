@@ -2,14 +2,26 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Satmed - Triagem Espacial</title>
     <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
     <header class="cabecalho-principal">
         <nav class="menu-principal" aria-label="Navegação Principal">
-            <div class="marca-startup">Satmed 🛰️</div>
-            <div class="links-menu">
+            <div class="cabecalho-mobile">
+                <div class="marca-startup">
+                    Satmed
+                    <img src="./img/satelite-emergencia.jpg" alt="Logo Satmed" class="icone-logo">
+                </div>
+                <div class="menu-toggle" id="btn-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            
+            <div class="links-menu" id="links-menu">
                 <a href="index.html" class="ativo">Início</a>
                 <a href="paginas/sobre.html">Sobre a Solução</a>
                 <a href="paginas/faq.html">FAQ</a>
@@ -17,7 +29,9 @@
                 <a href="paginas/integrantes.html">Integrantes</a>
             </div>
         </nav>
+    </header>
 
+    <main>
         <div class="hero-banner">
             <div class="hero-texto">
                 <h1>Economia Espacial Salvando Vidas</h1>
@@ -28,9 +42,7 @@
                 <img src="./img/satelite-emergencia.jpg" alt="Ilustração de um satélite enviando sinal de emergência para a Terra">
             </div>
         </div>
-    </header>
 
-    <main>
         <section id="area-simulacao" class="area-triagem">
             <div class="cabecalho-secao">
                 <h2>Terminal de Triagem D2D</h2>

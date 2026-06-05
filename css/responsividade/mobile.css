@@ -1,26 +1,189 @@
 @media (max-width: 600px) {
+    /* CORREÇÃO DO TRANSBORDAMENTO (OVERFLOW) E TAMANHO DE FONTES */
     body {
         font-size: 14px;
+        overflow-x: hidden; /* Proíbe a tela de balançar para os lados */
     }
     
-    header h1 {
-        font-size: 2em;
+    .cabecalho-principal, .menu-principal {
+        height: auto;
     }
 
-    main {
-        margin: 1rem;
-        padding: 0;
+    .menu-principal {
+        flex-direction: column;
+        padding: 1.5rem;
+        align-items: flex-start;
+    }
+
+    .marca-startup {
+        font-size: 1.6rem;
+    }
+
+    .icone-logo {
+        height: 24px;
+        margin-left: 8px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .links-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .links-menu a {
+        display: block;
+        width: 100%;
+        max-width: 260px;
+        padding: 1rem 0;
+        background: rgba(5, 8, 20, 0.9);
+        border: 1px solid #1c2841;
+        border-radius: 8px;
+        font-size: 1.2rem;
+        text-align: center;
+        box-shadow: 0px 0px 8px rgba(0, 212, 255, 0.15);
+    }
+
+    .links-menu a:hover, .links-menu a.ativo {
+        border: 1px solid #00d4ff;
+        background: rgba(0, 212, 255, 0.1);
+        transform: none;
+    }
+
+    /* CORREÇÕES DA PÁGINA INICIAL */
+    .hero-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1.5rem; /* Reduzindo drasticamente para caber na tela */
+        width: 95%; 
+        margin: 1.5rem auto;
+        gap: 20px;
+    }
+
+    .hero-texto {
+        max-width: 100%;
+    }
+
+    .hero-texto h1 {
+        font-size: 2.2rem; /* Tamanho exato para não quebrar a tela do celular */
+        margin-bottom: 1rem;
+    }
+
+    .hero-texto p {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .btn-ancora {
+        width: 100%; /* Botão ocupa o espaço todo em mobile */
+        box-sizing: border-box;
+    }
+
+    .hero-imagem {
+        max-width: 100%;
+    }
+
+    .hero-imagem img {
+        width: 100%;
+        max-width: 280px; 
+        margin: 0 auto;
     }
 
     .area-triagem, .area-riscos {
-        padding: 1rem;
+        width: 95%;
+        padding: 1.5rem 1rem;
+        margin: 0 auto 2rem auto;
     }
 
-    button {
+    select {
+        font-size: 1rem;
+        padding: 15px;
+    }
+
+    /* CORREÇÕES DA PÁGINA DE INTEGRANTES */
+    .cabecalho-equipe h2 {
+        font-size: 2rem;
+        margin-top: 1rem;
+        padding: 0 10px;
+    }
+
+    .flex-equipe {
+        flex-direction: column;
+        align-items: center;
+        gap: 35px;
+        padding: 10px;
         width: 100%;
     }
-    
-    input[type="text"] {
-        width: 90%;
+
+    .cartao-integrante {
+        width: 100%;
+        flex: 0 0 auto; 
+        max-width: 320px; 
+        padding: 35px 20px;
+        height: auto;
+        min-height: 450px;
     }
+
+    
+    
+@media (max-width: 600px) {
+    .area-sobre-container {
+        width: 95%;
+        padding: 25px 15px;
+        margin: 1.5rem auto;
+    }
+
+    .cabecalho-sobre h2 {
+        font-size: 2rem;
+    }
+
+    .cabecalho-sobre p {
+        font-size: 1.1rem;
+    }
+
+    .conteudo-ods h3 {
+        font-size: 1.5rem;
+    }
+
+    .tabela-responsiva {
+        width: 100%;
+        overflow-x: auto;
+        border: 1px solid #1c2841;
+        border-radius: 8px;
+    }
+
+    .tabela-ods th, .tabela-ods td {
+        padding: 12px 10px;
+        font-size: 0.95rem;
+    }
+
+    .coluna-ods {
+        white-space: normal;
+        width: auto;
+        display: block;
+        padding-bottom: 5px;
+    }
+
+    .tabela-ods td {
+        display: block;
+        width: 100%;
+        border-bottom: 1px dashed #1c2841;
+    }
+
+    .tabela-ods tr {
+        display: block;
+        padding: 10px 0;
+        border-bottom: 2px solid #00d4ff;
+    }
+
+    .tabela-ods thead {
+        display: none;
+    }
+}
 }

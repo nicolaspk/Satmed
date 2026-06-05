@@ -2,58 +2,76 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Satmed - Sobre a Solução</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
-    <header>
-        <h1>Satmed</h1>
-        <p>Conectando vidas e encurtando distâncias</p>
+    <header class="cabecalho-principal">
         <nav class="menu-principal" aria-label="Navegação Principal">
-            <a href="../index.html">Início</a> |
-            <a href="sobre.html" class="ativo">Sobre a Solução</a> |
-            <a href="faq.html">FAQ</a> |
-            <a href="contato.html">Contato</a> |
-            <a href="integrantes.html">Integrantes</a>
+            <div class="cabecalho-mobile">
+                <div class="marca-startup">
+                    Satmed
+                    <img src="../img/satelite-emergencia.jpg" alt="Logo Satmed" class="icone-logo">
+                </div>
+                <div class="menu-toggle" id="btn-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            
+            <div class="links-menu" id="links-menu">
+                <a href="../index.html">Início</a>
+                <a href="sobre.html" class="ativo">Sobre a Solução</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contato.html">Contato</a>
+                <a href="integrantes.html">Integrantes</a>
+            </div>
         </nav>
     </header>
 
     <main>
-        <section class="area-triagem">
-            <h2>O Problema e a Solução</h2>
-            <p>Durante desastres naturais, a infraestrutura terrestre (4G, fibra ótica) cai. O Satmed atua através da <strong>Economia Espacial</strong> (Direct-to-Cell) para garantir a triagem médica e o resgate guiado, evitando o apagão de dados.</p>
-            
-            <h3>Alinhamento ODS (ONU)</h3>
-            <table class="tabela-ods" aria-label="Tabela de Objetivos de Desenvolvimento Sustentável da ONU">
-                <thead>
-                    <tr>
-                        <th>ODS</th>
-                        <th>Descrição na Solução Satmed</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>ODS 9</strong> - Indústria, Inovação e Infraestrutura</td>
-                        <td>Uso da tecnologia e infraestrutura de satélites para criar uma rede resiliente de comunicação de emergência.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>ODS 11</strong> - Cidades e Comunidades Sustentáveis</td>
-                        <td>Mantém a população urbana assistida e com capacidade de pedir socorro mesmo durante o colapso da cidade.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>ODS 13</strong> - Ação Contra a Mudança Global do Clima</td>
-                        <td>Mitiga vítimas fatais em desastres climáticos extremos através do despacho assertivo de equipes de resgate.</td>
-                    </tr>
-                </tbody>
-            </table>
+        <section class="area-sobre-container">
+            <div class="cabecalho-sobre">
+                <h2>O Problema e a Solução</h2>
+                <p>Durante desastres naturais, a infraestrutura terrestre (4G, fibra ótica) cai. O Satmed atua através da <strong>Economia Espacial</strong> (Direct-to-Cell) para garantir a triagem médica e o resgate guiado, evitando o apagão de dados.</p>
+            </div>
+
+            <div class="conteudo-ods">
+                <h3>Alinhamento ODS (ONU)</h3>
+                <div class="tabela-responsiva">
+                    <table class="tabela-ods" aria-label="Tabela de Objetivos de Desenvolvimento Sustentável da ONU">
+                        <thead>
+                            <tr>
+                                <th>ODS</th>
+                                <th>Descrição na Solução Satmed</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="coluna-ods"><strong>ODS 9</strong> - Indústria, Inovação e Infraestrutura</td>
+                                <td>Uso da tecnologia e infraestrutura de satélites para criar uma rede resiliente de comunicação de emergência.</td>
+                            </tr>
+                            <tr>
+                                <td class="coluna-ods"><strong>ODS 11</strong> - Cidades e Comunidades Sustentáveis</td>
+                                <td>Mantém a população urbana assistida e com capacidade de pedir socorro mesmo durante o colapso da cidade.</td>
+                            </tr>
+                            <tr>
+                                <td class="coluna-ods"><strong>ODS 13</strong> - Ação Contra a Mudança Global do Clima</td>
+                                <td>Mitiga vítimas fatais em desastres climáticos extremos através do despacho assertivo de equipes de resgate.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <nav aria-label="Navegação de Rodapé">
-            <p>Global Solution 2026/1 - Economia Espacial | ODS 9, 11 e 13</p>
-        </nav>
+    <footer class="rodape-principal">
+        <p>Global Solution 2026/1 - Economia Espacial | Alinhado aos ODS 9, 11 e 13 da ONU</p>
     </footer>
-    <script src="./js/script.js"></script>
+
+    <script src="../js/script.js"></script>
 </body>
 </html>

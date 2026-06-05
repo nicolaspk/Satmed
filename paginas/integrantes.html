@@ -2,39 +2,50 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Satmed - Equipe</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satmed - Integrantes</title>
     <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
     <header class="cabecalho-principal">
-        <div class="logo-container">
-            <div class="logo-texto">
-                <h1>Satmed</h1>
-                <p>Conectando vidas e encurtando distâncias via Direct-to-Cell</p>
-            </div>
-        </div>
         <nav class="menu-principal" aria-label="Navegação Principal">
-            <a href="../index.html">Início</a>
-            <a href="sobre.html">Sobre a Solução</a>
-            <a href="faq.html">FAQ</a>
-            <a href="contato.html">Contato</a>
-            <a href="integrantes.html" class="ativo">Integrantes</a>
+            <div class="cabecalho-mobile">
+                <div class="marca-startup">
+                    Satmed 
+                    <img src="../img/satelite-emergencia.jpg" alt="Logo Satelite Satmed" class="icone-logo">
+                </div>
+                <div class="menu-toggle" id="btn-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            
+            <div class="links-menu" id="links-menu">
+                <a href="../index.html">Início</a>
+                <a href="sobre.html">Sobre a Solução</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contato.html">Contato</a>
+                <a href="integrantes.html" class="ativo">Integrantes</a>
+            </div>
         </nav>
     </header>
 
     <main>
         <section class="area-equipe-container">
             <div class="cabecalho-equipe">
-                <h2>Desenvolvedores</h2>
-                <p>Conheça a equipe responsável pela solução Satmed.</p>
+                <h2>Corpo Técnico de Desenvolvedores</h2>
+                <p>Equipe de Engenharia e Desenvolvimento responsável pela arquitetura, design de interface e implementação do protocolo orbital Satmed.</p>
             </div>
 
-            <div class="grid-equipe">
+            <div class="flex-equipe">
                 <div class="cartao-integrante">
-                    <img src="../img/foto-nicolas.jpg" alt="Fotografia de Nicolas Sousa">
+                    <div class="avatar-container">
+                        <img src="../img/foto-nicolas.jpg" alt="Fotografia de Nicolas Sousa">
+                    </div>
                     <h3>Nicolas Sousa</h3>
-                    <p><strong>RM:</strong> 574141</p>
-                    <p><strong>Turma:</strong> 1TDSPH</p>
+                    <p class="info-academica"><strong>RM:</strong> 574141</p>
+                    <p class="info-academica"><strong>Turma:</strong> 1TDSPH</p>
                     <div class="links-integrante">
                         <a href="https://github.com/nicolaspk" target="_blank">GitHub</a>
                         <a href="https://www.linkedin.com/in/nicolas-sousaa/" target="_blank">LinkedIn</a>
@@ -42,10 +53,12 @@
                 </div>
                 
                 <div class="cartao-integrante">
-                    <img src="../img/foto-maria1.jpeg" alt="Fotografia de Maria Eduarda Escandor">
+                    <div class="avatar-container">
+                        <img src="../img/foto-maria1.jpeg" alt="Fotografia de Maria Eduarda Escandor">
+                    </div>
                     <h3>Maria Eduarda Escandor</h3>
-                    <p><strong>RM:</strong> 568216</p>
-                    <p><strong>Turma:</strong> 1TDSPO</p>
+                    <p class="info-academica"><strong>RM:</strong> 568216</p>
+                    <p class="info-academica"><strong>Turma:</strong> 1TDSPO</p>
                     <div class="links-integrante">
                         <a href="https://github.com/mariabatistaescandor-gif" target="_blank">GitHub</a>
                         <a href="https://www.linkedin.com/in/maria-eduarda-escandor-5b1587359/" target="_blank">LinkedIn</a>
@@ -53,10 +66,12 @@
                 </div>
 
                 <div class="cartao-integrante">
-                    <img src="../img/foto-erick.jpeg" alt="Fotografia de Erick Menezes">
+                    <div class="avatar-container">
+                        <img src="../img/foto-erick.jpeg" alt="Fotografia de Erick Menezes">
+                    </div>
                     <h3>Erick Menezes</h3>
-                    <p><strong>RM:</strong> 570325</p>
-                    <p><strong>Turma:</strong> 1TDSPF</p>
+                    <p class="info-academica"><strong>RM:</strong> 570325</p>
+                    <p class="info-academica"><strong>Turma:</strong> 1TDSPF</p>
                     <div class="links-integrante">
                         <a href="https://github.com/Erick488-maker" target="_blank">GitHub</a>
                         <a href="https://www.linkedin.com/in/erick-menezes-b53009232/" target="_blank">LinkedIn</a>
@@ -64,10 +79,12 @@
                 </div>
 
                 <div class="cartao-integrante">
-                    <img src="../img/foto-katerine.jpeg" alt="Fotografia de Katerine Hildebrand">
+                    <div class="avatar-container">
+                        <img src="../img/foto-katerine.jpeg" alt="Fotografia de Katerine Hildebrand">
+                    </div>
                     <h3>Katerine Hildebrand</h3>
-                    <p><strong>RM:</strong> 569809</p>
-                    <p><strong>Turma:</strong> 1TDSPO</p>
+                    <p class="info-academica"><strong>RM:</strong> 569809</p>
+                    <p class="info-academica"><strong>Turma:</strong> 1TDSPO</p>
                     <div class="links-integrante">
                         <a href="https://github.com/katpeaga" target="_blank">GitHub</a>
                         <a href="https://www.linkedin.com/in/katerine-hildebrand-8928752a3/" target="_blank">LinkedIn</a>
@@ -75,10 +92,12 @@
                 </div>
 
                 <div class="cartao-integrante">
-                    <img src="../img/foto-maria2.png" alt="Fotografia de Maria Lima">
+                    <div class="avatar-container">
+                        <img src="../img/foto-maria2.png" alt="Fotografia de Maria Lima">
+                    </div>
                     <h3>Maria Eduarda Lopes</h3>
-                    <p><strong>RM:</strong> 572425</p>
-                    <p><strong>Turma:</strong> 1TDSPO</p>
+                    <p class="info-academica"><strong>RM:</strong> 572425</p>
+                    <p class="info-academica"><strong>Turma:</strong> 1TDSPO</p>
                     <div class="links-integrante">
                         <a href="https://github.com/mariaeduardaalima" target="_blank">GitHub</a>
                         <a href="https://www.linkedin.com/in/maria-eduarda-lopes-de-lima-1291b6289/" target="_blank">LinkedIn</a>
@@ -89,7 +108,9 @@
     </main>
 
     <footer class="rodape-principal">
-        <p>Global Solution 2026/1 - Economia Espacial | ODS 9, 11 e 13</p>
+        <p>Global Solution 2026/1 - Economia Espacial | Alinhado aos ODS 9, 11 e 13 da ONU</p>
     </footer>
+
+    <script src="../js/script.js"></script>
 </body>
 </html>

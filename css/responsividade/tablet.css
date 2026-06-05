@@ -1,0 +1,78 @@
+@media (min-width: 601px) and (max-width: 1024px) {
+    .menu-principal {
+        padding: 0 2rem;
+    }
+
+    .links-menu {
+        gap: 10px;
+    }
+
+    .links-menu a {
+        font-size: 1rem;
+        padding: 0.5rem 0.8rem;
+    }
+
+    /* Ajustes da Home no iPad */
+    .hero-banner {
+        flex-direction: column;
+        text-align: center;
+        width: 90%;
+        padding: 3rem 2rem;
+    }
+
+    .hero-texto {
+        max-width: 100%;
+    }
+
+    .hero-texto h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-imagem {
+        margin-top: 2rem;
+        max-width: 80%;
+    }
+
+    .area-triagem, .area-riscos {
+        width: 90%;
+        padding: 2.5rem;
+    }
+
+    /* Ajustes de Integrantes no iPad */
+    .cabecalho-equipe h2 {
+        font-size: 2.2rem;
+    }
+
+    .flex-equipe {
+        gap: 25px;
+        max-width: 750px;
+        width: 100%;
+    }
+
+    .cartao-integrante {
+        flex: 0 0 320px;
+        width: 320px;
+    }
+
+    @media (min-width: 601px) and (max-width: 1024px) {
+    .area-sobre-container {
+        width: 90%;
+        padding: 35px;
+    }
+
+    .cabecalho-sobre h2 {
+        font-size: 2.4rem;
+    }
+
+    .tabela-ods th, .tabela-ods td {
+        padding: 15px;
+        font-size: 1rem;
+    }
+
+    .coluna-ods {
+        white-space: normal;
+        width: 30%;
+    }
+}
+    
+}

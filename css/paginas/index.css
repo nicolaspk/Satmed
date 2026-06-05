@@ -1,4 +1,98 @@
-/* CABEÇALHO DO TERMINAL */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* CAIXA DE DESTAQUE (HERO BANNER) */
+.hero-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem;
+    width: 90%; /* Garante que a caixa nunca vaze a tela */
+    max-width: 1200px;
+    margin: 3rem auto; /* Centraliza a caixa na tela */
+    gap: 40px;
+    background-color: rgba(11, 17, 32, 0.85); /* Fundo da caixa */
+    border: 2px solid #1c2841;
+    border-radius: 15px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+.hero-texto {
+    flex: 1;
+    width: 100%;
+}
+
+.hero-texto h1 {
+    font-size: 3.5rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    text-shadow: 0px 0px 15px rgba(0, 212, 255, 0.4);
+}
+
+.hero-texto p {
+    font-size: 1.2rem;
+    color: #cccccc;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+.btn-ancora {
+    background-color: #00d4ff;
+    color: #050814;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    border: 2px solid transparent;
+}
+
+.btn-ancora:hover {
+    background-color: transparent;
+    color: #00d4ff;
+    border-color: #00d4ff;
+    box-shadow: 0px 0px 15px rgba(0, 212, 255, 0.5);
+    transform: translateY(-5px);
+}
+
+.hero-imagem {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-imagem img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    background: transparent;
+    animation: flutuar 5s ease-in-out infinite alternate;
+    filter: drop-shadow(0px 10px 15px rgba(0, 212, 255, 0.2)); 
+}
+
+@keyframes flutuar {
+    from { transform: translateY(0); }
+    to { transform: translateY(-20px); }
+}
+
+/* ÁREA DE TRIAGEM */
+.area-triagem {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto 3rem auto;
+    background-color: rgba(28, 40, 65, 0.95);
+    padding: 3rem;
+    border: 2px solid #00d4ff;
+    border-radius: 15px;
+    box-shadow: 0px 5px 20px rgba(0,0,0,0.5);
+}
+
 .cabecalho-secao {
     text-align: center;
     margin-bottom: 2rem;
@@ -14,9 +108,9 @@
 .cabecalho-secao p {
     color: #aaaaaa;
     font-size: 1.1rem;
+    margin-top: 10px;
 }
 
-/* CAIXA DE SELEÇÃO */
 select {
     width: 100%;
     padding: 18px;
@@ -36,7 +130,6 @@ select:focus {
     box-shadow: 0px 0px 15px rgba(0, 212, 255, 0.2);
 }
 
-/* CAIXA DE DADOS DE GPS */
 .dados-rastreio {
     background-color: rgba(11, 17, 32, 0.8);
     border: 1px solid #1c2841;
@@ -62,10 +155,9 @@ select:focus {
 
 .dados-rastreio span {
     font-size: 0.9rem;
-    color: #4caf50; /* Cor verde indicando sucesso na conexão */
+    color: #4caf50;
 }
 
-/* BOTÃO DE TRANSMISSÃO */
 .btn-principal {
     width: 100%;
     padding: 20px;
@@ -73,11 +165,21 @@ select:focus {
     border-radius: 8px;
     letter-spacing: 1px;
     text-transform: uppercase;
+    background-color: #00d4ff;
+    color: #050814;
+    border: 2px solid transparent;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-/* =========================================
-   ÁREA DE RESPOSTA DO JS (Simulação)
-   ========================================= */
+.btn-principal:hover {
+    background-color: transparent;
+    color: #00d4ff;
+    border-color: #00d4ff;
+    box-shadow: 0px 0px 15px rgba(0, 212, 255, 0.4);
+}
+
 .painel-oculto {
     display: none;
     margin-top: 30px;
@@ -104,7 +206,6 @@ select:focus {
     100% { opacity: 1; }
 }
 
-/* CARTÃO DE RESPOSTA MÉDICA */
 .resultado-triagem {
     padding: 20px;
     border-radius: 10px 10px 0 0;
@@ -124,7 +225,6 @@ select:focus {
     border-radius: 0 0 10px 10px;
 }
 
-/* Aplicando as cores das bordas baseadas na classe pai inserida via JS */
 .risco-vermelho + .resposta-hospital { border-color: #ff4d4d; border-top: none; }
 .risco-amarelo + .resposta-hospital { border-color: #ffcc00; border-top: none; }
 .risco-verde + .resposta-hospital { border-color: #4caf50; border-top: none; }
@@ -141,7 +241,13 @@ select:focus {
     color: #cccccc;
 }
 
-/* CARDS DO DETAILS (MANUAL) */
+/* ÁREA DO MANUAL DE RISCOS */
+.area-riscos {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto 3rem auto;
+}
+
 .niveis-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -154,6 +260,8 @@ select:focus {
     border-radius: 8px;
     text-align: center;
     color: #ffffff;
+    background-color: rgba(28, 40, 65, 0.5);
+    border: 1px solid #1c2841;
 }
 
 .card-risco h3 { margin-top: 0; font-size: 1.3rem; }

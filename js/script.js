@@ -1,15 +1,33 @@
 document.addEventListener("DOMContentLoaded", function() {
+    
+    let btnMenu = document.getElementById("btn-menu");
+    let linksMenu = document.getElementById("links-menu");
+
+    if (btnMenu && linksMenu) {
+        btnMenu.addEventListener("click", function() {
+            // Verifica o estilo inline aplicado pelo DOM
+            if (linksMenu.style.display === "flex") {
+                linksMenu.style.display = "none";
+            } else {
+                linksMenu.style.display = "flex";
+            }
+        });
+    }
+
     let botaoTransmitir = document.getElementById("btn-transmitir");
     let selectSituacao = document.getElementById("situacao");
     let formTriagem = document.getElementById("form-triagem");
     let painelSimulacao = document.getElementById("painel-simulacao");
 
-    if (botaoTransmitir) {
+    if (botaoTransmitir && selectSituacao && formTriagem && painelSimulacao) {
         botaoTransmitir.addEventListener("click", function() {
+            
             if (selectSituacao.value !== "") {
                 
+        
                 formTriagem.style.display = "none";
                 painelSimulacao.style.display = "block";
+                
                 
                 painelSimulacao.innerHTML = `
                     <div class="animacao-envio">
@@ -37,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         respostaMedico = "Seu sinal foi recebido. Equipes estão focadas em casos críticos no momento. Mantenha-se abrigado, beba água e aguarde novas instruções via satélite.";
                     }
 
+             
                     painelSimulacao.innerHTML = `
                         <div class="resultado-triagem ${classeNivel}">
                             <h3>${corClassificacao}</h3>

@@ -1,47 +1,120 @@
-.cabecalho-equipe {
-    text-align: center;
-    margin-bottom: 40px;
+.icone-logo {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: -10px;
+    filter: drop-shadow(0px 0px 15px rgba(0,212,255,0.8));
+
 }
 
-.grid-equipe {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+.cabecalho-equipe {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.cabecalho-equipe h2 {
+    font-size: 2.8rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-shadow: 0px 0px 15px rgba(0, 212, 255, 0.4);
+}
+
+.cabecalho-equipe p {
+    font-size: 1.2rem;
+    color: #cccccc;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.flex-equipe {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
+    width: 1020px;
 }
 
 .cartao-integrante {
-    background-color: rgba(11, 17, 32, 0.8);
-    border: 1px solid #1c2841;
+    background: linear-gradient(145deg, rgba(28, 40, 65, 0.95) 0%, rgba(11, 17, 32, 0.95) 100%);
+    border: 2px solid #1c2841;
     border-radius: 15px;
-    padding: 30px 20px;
+    padding: 40px 25px;
     text-align: center;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.6);
+    transition: all 0.4s ease;
+    width: 300px;
+    flex: 0 0 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 500px;
 }
 
 .cartao-integrante:hover {
-    transform: translateY(-10px);
-    border: 1px solid #00d4ff;
-    box-shadow: 0px 10px 25px rgba(0, 212, 255, 0.3);
+    transform: translateY(-12px);
+
+    border-color: #00d4ff;
+
+    box-shadow:
+    0px 0px 25px rgba(0,212,255,0.5),
+    0px 15px 35px rgba(0,0,0,0.6);
 }
 
-.cartao-integrante img {
-    width: 140px;
-    height: 140px;
+.avatar-container {
+    width: 160px;
+    height: 160px;
+    margin-bottom: 25px;
+    margin: 0 auto 20px auto;
     border-radius: 50%;
-    border: 3px solid #00d4ff;
-    margin-bottom: 15px;
+    border: 3px solid #1c2841;
+    overflow: hidden;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+    transition: all 0.4s ease;
+}
+
+.cartao-integrante:hover .avatar-container {
+    border-color: #00d4ff;
+    box-shadow: 0px 0px 20px rgba(0, 212, 255, 0.5);
+}
+
+.avatar-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .cartao-integrante h3 {
-    color: #00d4ff;
-    margin: 10px 0;
-    font-size: 1.4rem;
+    color: #ffffff;
+    font-size: 1.6rem;
+    margin: 10px 0 5px 0;
+
+    min-height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.info-academica {
+   font-size: 1rem;
+    color: #dcdcdc;
+    margin: 8px 0;
+
+    background: rgba(0, 212, 255, 0.08);
+    padding: 5px 15px;
+    border-radius: 20px;
+
+    border: 1px solid rgba(0,212,255,0.3);
 }
 
 .links-integrante {
-    margin-top: 20px;
+    margin-top: 25px;
     display: flex;
     justify-content: center;
     gap: 15px;
@@ -50,20 +123,37 @@
 .links-integrante a {
     color: #ffffff;
     text-decoration: none;
-    background-color: #1c2841;
-    padding: 8px 15px;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    transition: background-color 0.3s ease;
+    background-color: #050814;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 1px solid #1c2841;
 }
 
 .links-integrante a:hover {
-    background-color: #00d4ff;
-    color: #000000;
+     background-color: rgba(0,212,255,0.15);
+    color: #00d4ff;
+    border-color: #00d4ff;
+
+    box-shadow:
+    0px 0px 15px rgba(0,212,255,0.6);
+
+    transform: scale(1.05);
+}
+.marca-startup {
+    display: flex;
+    align-items: center;
+    gap: 0px;
 }
 
-@media (max-width: 768px) {
-    .grid-equipe {
-        grid-template-columns: 1fr;
-    }
+.cabecalho-principal {
+    height: 80px;
+}
+
+.menu-principal {
+    height: 80px;
+    display: flex;
+    align-items: center;
 }

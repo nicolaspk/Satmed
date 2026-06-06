@@ -32,43 +32,118 @@
     </header>
 
     <main>
-        <section class="area-sobre-container">
-            <div class="cabecalho-sobre">
-                <h2>O Problema e a Solução</h2>
-                <p>Durante desastres naturais, a infraestrutura terrestre (4G, fibra ótica) cai. O Satmed atua através da <strong>Economia Espacial</strong> (Direct-to-Cell) para garantir a triagem médica e o resgate guiado, evitando o apagão de dados.</p>
+        <article class="area-sobre-container">
+            
+            <section class="cabecalho-sobre">
+                <h2>Conectando vidas e encurtando distâncias</h2>
+                <p>Triagem inteligente, resgate guiado e orientação remota onde a internet terrestre não chega.</p>
+            </section>
+
+            <div class="sobre-duas-colunas">
+                <section class="bloco-info">
+                    <h3>1. Descrição da Solução</h3>
+                    <p>O projeto é um aplicativo de emergência e auto-triagem projetado para operar via conectividade satelital direta (Direct-to-Cell / D2D). Ele atua como uma ponte de comunicação de via dupla entre cidadãos isolados pela falha da infraestrutura terrestre e os centros médicos de resgate. A plataforma permite que dados vitais e de localização sejam coletados offline no próprio smartphone da vítima, classificados automaticamente por nível de urgência e transmitidos para as autoridades em hospitais urbanos. O sistema garante resgates rápidos para casos críticos e permite o retorno de orientações médicas remotas, independentemente do colapso das redes tradicionais.</p>
+                </section>
+
+                <section class="bloco-info">
+                    <h3>2. Problema e Oportunidade</h3>
+                    <p>O grande problema atual é a extrema vulnerabilidade da infraestrutura de telecomunicações terrestre. Em caso de desastres naturais ou em áreas remotas, cabos de fibra ótica e torres de metal 4G/5G caem, alagam ou ficam sem energia. Sem o 4G comum, os pedidos de socorro não chegam. Isso gera um apagão de dados, sobrecarrega as equipes de resgate que acabam voando ou navegando às cegas e causa atrasos fatais no atendimento de pacientes críticos.</p>
+                </section>
             </div>
 
-            <div class="conteudo-ods">
-                <h3>Alinhamento ODS (ONU)</h3>
+            <section class="bloco-info publico-alvo">
+                <h3>3. Público-Alvo</h3>
+                <div class="publico-grid">
+                    <div class="card-publico">
+                        <h4>Usuários na Ponta (Vítimas)</h4>
+                        <p>Populações de áreas de risco, comunidades ribeirinhas, aldeias indígenas, trabalhadores offshore e qualquer pessoa em situação de desastre que necessite de resgate e tenha um smartphone em mãos.</p>
+                    </div>
+                    <div class="card-publico">
+                        <h4>Usuários nos Centros (Receptores)</h4>
+                        <p>Médicos reguladores, administradores de leitos e equipes de resposta rápida nos centros de comando urbanos tomando decisões de despacho de helicópteros, viaturas ou orientações remotas.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="sobre-niveis-triagem">
+                <h3>4. Solução Proposta (Como Funciona)</h3>
+                
+                <details class="acordeao-etapa">
+                    <summary>Auto-Coleta Rápida</summary>
+                    <p>A própria vítima ou alguém próximo abre o app Satmed e seleciona visualmente seus sintomas e estado atual.</p>
+                </details>
+
+                <details class="acordeao-etapa">
+                    <summary>Pré-Triagem Autônoma</summary>
+                    <p>O aplicativo processa a situação localmente no aparelho e classifica a urgência do resgate.</p>
+                </details>
+
+                <details class="acordeao-etapa">
+                    <summary>Transmissão Espacial (D2D)</summary>
+                    <p>O app compacta a classificação e a coordenada de GPS exata em um pacote de poucos bytes e o envia usando a tecnologia Direct-to-Cell. O smartphone se conecta diretamente aos satélites de baixa órbita.</p>
+                </details>
+
+                <details class="acordeao-etapa">
+                    <summary>Ação de Resgate Guiada</summary>
+                    <p>No centro de comando, a Defesa Civil recebe a fila de espera priorizada por gravidade. Para os casos urgentes, o helicóptero de resgate é despachado direto para a localização exata, otimizando tempo e combustível.</p>
+                </details>
+
+                <details class="acordeao-etapa">
+                    <summary>Retorno e Orientação Médica</summary>
+                    <p>Para casos não urgentes, o médico digita uma conduta no painel. O Satmed envia esse texto leve de volta via satélite, que apita como um alerta no celular da vítima com instruções de primeiros socorros ou contenção.</p>
+                </details>
+            </section>
+
+            <section class="bloco-info diferenciais">
+                <h3>5. Diferenciais Competitivos</h3>
+                <div class="diferenciais-grid">
+                    <div class="card-diferencial">
+                        <h4>Independência Terrestre</h4>
+                        <p>A maior vantagem é não depender de provedores convencionais. Onde há céu, o smartphone da vítima consegue pedir socorro via satélite.</p>
+                    </div>
+                    <div class="card-diferencial">
+                        <h4>Inteligência Contra o Caos</h4>
+                        <p>Em uma catástrofe, milhares de mensagens podem causar colapso. O Satmed organiza o caos entregando uma fila clinicamente priorizada.</p>
+                    </div>
+                    <div class="card-diferencial">
+                        <h4>Comunicação Bilateral Assíncrona</h4>
+                        <p>Prioriza o envio e recebimento de beacons em texto estruturado. Permite triagem e contenção psicológica e médica remota mesmo com o sinal espacial mais fraco possível.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="conteudo-ods">
+                <h3>6. Alinhamento ODS (ONU)</h3>
                 <div class="tabela-responsiva">
-                    <table class="tabela-ods" aria-label="Tabela de Objetivos de Desenvolvimento Sustentável da ONU">
+                    <table class="tabela-ods" aria-label="Tabela detalhando os Objetivos de Desenvolvimento Sustentável da ONU atendidos pelo Satmed">
                         <thead>
                             <tr>
-                                <th>ODS</th>
-                                <th>Descrição na Solução Satmed</th>
+                                <th scope="col">ODS</th>
+                                <th scope="col">Impacto da Solução Satmed</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="coluna-ods"><strong>ODS 9</strong> - Indústria, Inovação e Infraestrutura</td>
-                                <td>Uso da tecnologia e infraestrutura de satélites para criar uma rede resiliente de comunicação de emergência.</td>
+                                <td class="coluna-ods" scope="row"><strong>ODS 9</strong> - Indústria, Inovação e Infraestrutura</td>
+                                <td>Uso da tecnologia e infraestrutura avançada de satélites para criar uma rede resiliente e inovadora de comunicação de emergência.</td>
                             </tr>
                             <tr>
-                                <td class="coluna-ods"><strong>ODS 11</strong> - Cidades e Comunidades Sustentáveis</td>
-                                <td>Mantém a população urbana assistida e com capacidade de pedir socorro mesmo durante o colapso da cidade.</td>
+                                <td class="coluna-ods" scope="row"><strong>ODS 11</strong> - Cidades e Comunidades Sustentáveis</td>
+                                <td>Mantém a população urbana conectada e com capacidade de pedir socorro vital, mesmo durante o colapso estrutural da cidade.</td>
                             </tr>
                             <tr>
-                                <td class="coluna-ods"><strong>ODS 13</strong> - Ação Contra a Mudança Global do Clima</td>
-                                <td>Mitiga vítimas fatais em desastres climáticos extremos através do despacho assertivo de equipes de resgate.</td>
+                                <td class="coluna-ods" scope="row"><strong>ODS 13</strong> - Ação Contra a Mudança Global do Clima</td>
+                                <td>Mitiga o número de vítimas fatais em desastres climáticos extremos através do mapeamento e despacho assertivo de equipes de resgate.</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-            </div>
-        </section>
+            </section>
+
+        </article>
     </main>
 
-    <footer class="rodape-principal">
+     <footer class="rodape-principal">
         <p>Global Solution 2026/1 - Economia Espacial | Alinhado aos ODS 9, 11 e 13 da ONU</p>
     </footer>
 

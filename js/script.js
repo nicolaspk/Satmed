@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
-    
+
+    // GESTÃO DO MENU MOBILE
     let btnMenu = document.getElementById("btn-menu");
     let linksMenu = document.getElementById("links-menu");
 
     if (btnMenu && linksMenu) {
         btnMenu.addEventListener("click", function() {
-            // Verifica o estilo inline aplicado pelo DOM
             if (linksMenu.style.display === "flex") {
                 linksMenu.style.display = "none";
             } else {
@@ -14,64 +14,136 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    let botaoTransmitir = document.getElementById("btn-transmitir");
-    let selectSituacao = document.getElementById("situacao");
-    let formTriagem = document.getElementById("form-triagem");
-    let painelSimulacao = document.getElementById("painel-simulacao");
+    // GESTÃO DOS PASSOS DA SIMULAÇÃO
+    let passo1 = document.getElementById("simulacao-passo-1");
+    let passo2 = document.getElementById("simulacao-passo-2");
+    let passo3 = document.getElementById("simulacao-passo-3");
+    let passo4 = document.getElementById("simulacao-passo-4");
+    let passo5 = document.getElementById("simulacao-passo-5");
 
-    if (botaoTransmitir && selectSituacao && formTriagem && painelSimulacao) {
-        botaoTransmitir.addEventListener("click", function() {
+    let btnInicializar = document.getElementById("btn-inicializar");
+    let btnTransmitir = document.getElementById("btn-transmitir");
+    let logScanner = document.getElementById("log-scanner");
+    let txtCoordenadas = document.getElementById("coordenadas-dinamicas");
+    let resultadoDinamico = document.getElementById("resultado-triagem-dinamico");
+
+    if (btnInicializar && passo1 && passo2 && passo3) {
+        btnInicializar.addEventListener("click", function() {
+            passo1.classList.add("painel-oculto");
+            passo2.classList.remove("painel-oculto");
+
+            setTimeout(function() {
+                logScanner.innerText = "Sinal de portadora detectado. Sincronizando relógio atômico...";
+            }, 1000);
+
+            setTimeout(function() {
+                logScanner.innerText = "Calculando triangulação com 4 satélites ativos. Fixando posição...";
+            }, 2200);
+
+            setTimeout(function() {
+                let latAleatoria = (-23.5505 + (Math.random() - 0.5) * 0.1).toFixed(4);
+                let lonAleatoria = (-46.6333 + (Math.random() - 0.5) * 0.1).toFixed(4);
+                txtCoordenadas.innerText = "LAT: " + latAleatoria + " | LON: " + lonAleatoria;
+
+                passo2.classList.add("painel-oculto");
+                passo3.classList.remove("painel-oculto");
+            }, 3500);
+        });
+    }
+
+    if (btnTransmitir && passo3 && passo4 && passo5) {
+        btnTransmitir.addEventListener("click", function() {
+            let opcoesMarcadas = document.querySelectorAll('input[name="problemas"]:checked');
             
-            if (selectSituacao.value !== "") {
-                
-        
-                formTriagem.style.display = "none";
-                painelSimulacao.style.display = "block";
-                
-                
-                painelSimulacao.innerHTML = `
-                    <div class="animacao-envio">
-                        <p>📡 Compactando pacote de dados...</p>
-                        <p>🛰️ Transmitindo via satélite D2D...</p>
+            if (opcoesMarcadas.length === 0) {
+                alert("Por favor, selecione ao menos uma das opções de ocorrência antes de realizar a transmissão.");
+                return;
+            }
+
+            passo3.classList.add("painel-oculto");
+            passo4.classList.remove("painel-oculto");
+
+            setTimeout(function() {
+                let gravidadeMaxima = "estavel";
+                let possuiTrauma = false;
+                let possuiRespiratorio = false;
+                let possuiUrgente = false;
+                let possuiIsolamento = false;
+
+                opcoesMarcadas.forEach(function(checkbox) {
+                    if (checkbox.value === "trauma") possuiTrauma = true;
+                    if (checkbox.value === "respiratorio") possuiRespiratorio = true;
+                    if (checkbox.value === "urgente") possuiUrgente = true;
+                    if (checkbox.value === "isolamento") possuiIsolamento = true;
+                });
+
+                if (possuiTrauma || possuiRespiratorio) {
+                    gravidadeMaxima = "critico";
+                } else if (possuiUrgente || possuiIsolamento) {
+                    gravidadeMaxima = "urgente";
+                }
+
+                let tituloClassificacao = "";
+                let classeEstilo = "";
+                let themeClass = ""; // Variável nova para pintar os 3 cartões
+                let statusResgate = "";
+                let orientacaoMedica = "";
+                let tempoEstimado = "";
+
+                if (gravidadeMaxima === "critico") {
+                    tituloClassificacao = "🔴 EMERGÊNCIA CRÍTICA (RISCO VERMELHO)";
+                    classeEstilo = "risco-vermelho";
+                    themeClass = "theme-vermelho";
+                    statusResgate = "<strong>🚨 AEROMÉDICO DESPACHADO</strong><br>O Centro de Regulação Aeroespacial interceptou o sinal da sua unidade.";
+                    orientacaoMedica = "<strong>Mantenha a vítima deitada.</strong><br>Estanque sangramentos com pressão firme. Não ofereça líquidos de forma alguma.";
+                    tempoEstimado = "<strong>⏱️ 12 a 18 MINUTOS</strong><br>Aeronave a caminho da zona de exclusão.";
+                } else if (gravidadeMaxima === "urgente") {
+                    tituloClassificacao = "🟡 PACIENTE COM URGÊNCIA (RISCO AMARELO)";
+                    classeEstilo = "risco-amarelo";
+                    themeClass = "theme-amarelo";
+                    statusResgate = "<strong>⚠️ BUSCA TERRESTRE ATIVA</strong><br>Sua posição foi incluída na fila de extração prioritária das equipes.";
+                    orientacaoMedica = "<strong>Permaneça abrigado sob estruturas rígidas.</strong><br>Evite movimentar membros com suspeita de fratura grave.";
+                    tempoEstimado = "<strong>⏱️ 35 a 50 MINUTOS</strong><br>Aguarde no ponto atual de emissão do sinal.";
+                } else {
+                    tituloClassificacao = "🟢 CASO ESTÁVEL REGISTRADO (RISCO VERDE)";
+                    classeEstilo = "risco-verde";
+                    themeClass = "theme-verde";
+                    statusResgate = "<strong>📡 REGISTRO PREVENTIVO</strong><br>Sinal processado pela IA orbital como situação estável e segura.";
+                    orientacaoMedica = "<strong>Monitore o estado do ferido.</strong><br>Permaneça no local. Se novos sintomas surgirem, reinicie este terminal.";
+                    tempoEstimado = "<strong>🔍 SUPORTE AGENDADO</strong><br>Equipes secundárias chegarão após a triagem dos casos críticos.";
+                }
+
+                resultadoDinamico.innerHTML = `
+                    <div class="resultado-triagem ${classeEstilo}">
+                        <h3>${tituloClassificacao}</h3>
+                    </div>
+                    <div class="resposta-hospital ${themeClass}">
+                        <h4>Diretriz Oficial do Hospital de Campanha</h4>
+                        
+                        <div class="painel-resposta-cards">
+                            <div class="sub-card-resposta">
+                                <h5>Status do Resgate</h5>
+                                <p>${statusResgate}</p>
+                            </div>
+                            
+                            <div class="sub-card-resposta">
+                                <h5>Primeiros Socorros</h5>
+                                <p>${orientacaoMedica}</p>
+                            </div>
+                            
+                            <div class="sub-card-resposta">
+                                <h5>Tempo de Espera</h5>
+                                <p>${tempoEstimado}</p>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn-recarregar" onclick="location.reload()">Encerrar e Iniciar Nova Transmissão</button>
                     </div>
                 `;
 
-                setTimeout(function() {
-                    let corClassificacao = "";
-                    let classeNivel = "";
-                    let respostaMedico = "";
-
-                    if (selectSituacao.value === "vermelho") {
-                        corClassificacao = "🔴 CLASSIFICAÇÃO: RISCO VERMELHO (#001)";
-                        classeNivel = "risco-vermelho";
-                        respostaMedico = "O helicóptero de resgate foi despachado para suas coordenadas. Mantenha a calma, pressione o ferimento com um pano limpo e permaneça no local. Chegada estimada: 15 minutos.";
-                    } else if (selectSituacao.value === "amarelo" || selectSituacao.value === "amarelo2") {
-                        corClassificacao = "🟡 CLASSIFICAÇÃO: RISCO AMARELO (#002)";
-                        classeNivel = "risco-amarelo";
-                        respostaMedico = "Uma equipe de resgate terrestre foi acionada. Mantenha-se em local seguro e evite esforço físico. Previsão de chegada: 45 minutos.";
-                    } else {
-                        corClassificacao = "🟢 CLASSIFICAÇÃO: RISCO VERDE (#003)";
-                        classeNivel = "risco-verde";
-                        respostaMedico = "Seu sinal foi recebido. Equipes estão focadas em casos críticos no momento. Mantenha-se abrigado, beba água e aguarde novas instruções via satélite.";
-                    }
-
-             
-                    painelSimulacao.innerHTML = `
-                        <div class="resultado-triagem ${classeNivel}">
-                            <h3>${corClassificacao}</h3>
-                        </div>
-                        <div class="resposta-hospital">
-                            <h4>Resposta Recebida do Hospital Central</h4>
-                            <p><strong>👨‍⚕️ Médico Regulador:</strong></p>
-                            <p>${respostaMedico}</p>
-                            <button type="button" class="btn-recarregar" onclick="location.reload()">Nova Transmissão</button>
-                        </div>
-                    `;
-                }, 3500); 
-
-            } else {
-                alert("Por favor, selecione sua situação atual na lista antes de transmitir o pedido de socorro.");
-            }
+                passo4.classList.add("painel-oculto");
+                passo5.classList.remove("painel-oculto");
+            }, 4000);
         });
     }
 });

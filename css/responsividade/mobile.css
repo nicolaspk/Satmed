@@ -1,12 +1,13 @@
-@media (max-width: 600px) {
-    /* CORREÇÃO DO TRANSBORDAMENTO (OVERFLOW) E TAMANHO DE FONTES */
+@media (max-width: 992px) {
+    /* CONTEÚDO GERAL E MENU */
     body {
         font-size: 14px;
-        overflow-x: hidden; /* Proíbe a tela de balançar para os lados */
+        overflow-x: hidden; 
     }
     
     .cabecalho-principal, .menu-principal {
         height: auto;
+        min-height: 75px;
     }
 
     .menu-principal {
@@ -15,12 +16,20 @@
         align-items: flex-start;
     }
 
+    .cabecalho-mobile {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
     .marca-startup {
         font-size: 1.6rem;
     }
 
     .icone-logo {
-        height: 24px;
+        width: 40px;
+        height: 40px;
         margin-left: 8px;
     }
 
@@ -37,30 +46,36 @@
         margin-top: 20px;
     }
 
+    /* BOTÕES DO MENU MOBILE COM VISUAL PREMIUM */
     .links-menu a {
         display: block;
         width: 100%;
-        max-width: 260px;
+        max-width: 280px;
         padding: 1rem 0;
-        background: rgba(5, 8, 20, 0.9);
+        background: linear-gradient(90deg, rgba(28, 40, 65, 0.9) 0%, rgba(5, 8, 20, 0.9) 100%);
         border: 1px solid #1c2841;
         border-radius: 8px;
         font-size: 1.2rem;
         text-align: center;
-        box-shadow: 0px 0px 8px rgba(0, 212, 255, 0.15);
+        box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+        text-shadow: 0px 0px 5px rgba(0, 212, 255, 0.4);
+        box-sizing: border-box;
+        transition: all 0.3s ease;
     }
 
     .links-menu a:hover, .links-menu a.ativo {
         border: 1px solid #00d4ff;
-        background: rgba(0, 212, 255, 0.1);
+        background: linear-gradient(90deg, rgba(0, 212, 255, 0.15) 0%, rgba(5, 8, 20, 0.9) 100%);
+        box-shadow: 0px 0px 15px rgba(0, 212, 255, 0.5);
+        color: #00d4ff;
         transform: none;
     }
 
-    /* CORREÇÕES DA PÁGINA INICIAL */
+    /* PÁGINA INICIAL (HOME) */
     .hero-banner {
         flex-direction: column;
         text-align: center;
-        padding: 2rem 1.5rem; /* Reduzindo drasticamente para caber na tela */
+        padding: 2.5rem 1.5rem; 
         width: 95%; 
         margin: 1.5rem auto;
         gap: 20px;
@@ -71,7 +86,7 @@
     }
 
     .hero-texto h1 {
-        font-size: 2.2rem; /* Tamanho exato para não quebrar a tela do celular */
+        font-size: 2.2rem; 
         margin-bottom: 1rem;
     }
 
@@ -81,12 +96,14 @@
     }
 
     .btn-ancora {
-        width: 100%; /* Botão ocupa o espaço todo em mobile */
+        width: 100%; 
         box-sizing: border-box;
+        text-align: center;
     }
 
     .hero-imagem {
         max-width: 100%;
+        margin-top: 1rem;
     }
 
     .hero-imagem img {
@@ -106,7 +123,7 @@
         padding: 15px;
     }
 
-    /* CORREÇÕES DA PÁGINA DE INTEGRANTES */
+    /* PÁGINA DE INTEGRANTES */
     .cabecalho-equipe h2 {
         font-size: 2rem;
         margin-top: 1rem;
@@ -130,9 +147,7 @@
         min-height: 450px;
     }
 
-    
-    
-@media (max-width: 600px) {
+    /* PÁGINA SOBRE A SOLUÇÃO */
     .area-sobre-container {
         width: 95%;
         padding: 25px 15px;
@@ -185,5 +200,4 @@
     .tabela-ods thead {
         display: none;
     }
-}
 }

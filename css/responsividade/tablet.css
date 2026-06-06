@@ -1,78 +1,151 @@
-@media (min-width: 601px) and (max-width: 1024px) {
-    .menu-principal {
-        padding: 0 2rem;
-    }
+@media (min-width: 993px) and (max-width: 1399px) {
+    body { font-size: 16px; }
 
-    .links-menu {
-        gap: 10px;
+    .links-menu { display: flex !important; flex-direction: row; gap: 15px; }
+    .menu-toggle { display: none !important; }
+
+    .menu-principal {
+        padding: 0 3rem;
+        min-height: 80px;
     }
 
     .links-menu a {
-        font-size: 1rem;
+        font-size: 1.05rem;
         padding: 0.5rem 0.8rem;
     }
 
-    /* Ajustes da Home no iPad */
     .hero-banner {
-        flex-direction: column;
-        text-align: center;
-        width: 90%;
-        padding: 3rem 2rem;
+        max-width: 950px;
+        padding: 3.5rem 3rem;
+        gap: 30px;
+        margin: 2rem auto;
     }
 
-    .hero-texto {
-        max-width: 100%;
-    }
-
-    .hero-texto h1 {
-        font-size: 2.8rem;
-    }
-
-    .hero-imagem {
-        margin-top: 2rem;
-        max-width: 80%;
-    }
+    .hero-texto h1 { font-size: 3.2rem; }
+    .hero-texto p { font-size: 1.15rem; }
+    .hero-imagem img { max-width: 380px; }
 
     .area-triagem, .area-riscos {
-        width: 90%;
+        max-width: 850px;
         padding: 2.5rem;
     }
 
-    /* Ajustes de Integrantes no iPad */
-    .cabecalho-equipe h2 {
-        font-size: 2.2rem;
-    }
-
     .flex-equipe {
+        max-width: 1050px;
         gap: 25px;
-        max-width: 750px;
-        width: 100%;
     }
 
     .cartao-integrante {
-        flex: 0 0 320px;
-        width: 320px;
+        flex: 0 0 310px;
+        width: 310px;
+        min-height: 460px;
+        padding: 30px 20px;
     }
 
-    @media (min-width: 601px) and (max-width: 1024px) {
     .area-sobre-container {
-        width: 90%;
+        max-width: 950px;
         padding: 35px;
     }
+}
 
-    .cabecalho-sobre h2 {
-        font-size: 2.4rem;
+@media (min-width: 1400px) and (max-width: 2560px) {
+    body { font-size: 16px; }
+
+    .links-menu { display: flex !important; flex-direction: row; gap: 15px; }
+    .menu-toggle { display: none !important; }
+
+    .menu-principal {
+        padding: 0 5%; 
+    }
+
+    .links-menu a {
+        font-size: 1.1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .hero-banner {
+        max-width: 1150px; 
+        padding: 4rem 3rem;
+        gap: 30px; 
+        margin: 3rem auto;
+    }
+
+    .hero-texto h1 { font-size: 3.5rem; }
+    .hero-texto p { font-size: 1.2rem; line-height: 1.6; }
+    .hero-imagem img { max-width: 450px; }
+
+    .area-triagem, .area-riscos {
+        max-width: 900px;
+        padding: 3rem;
+    }
+
+    .cabecalho-secao h2 { font-size: 2.6rem; }
+
+    .flex-equipe {
+        max-width: 1150px; 
+        gap: 30px;
+    }
+
+    .cartao-integrante {
+        flex: 0 0 330px;
+        width: 330px;
+        min-height: 480px;
+        padding: 40px 25px;
+    }
+
+    .avatar-container {
+        width: 150px;
+        height: 150px;
+    }
+
+    .area-sobre-container {
+        max-width: 1150px;
+        padding: 40px;
     }
 
     .tabela-ods th, .tabela-ods td {
-        padding: 15px;
-        font-size: 1rem;
-    }
-
-    .coluna-ods {
-        white-space: normal;
-        width: 30%;
+        padding: 18px;
+        font-size: 1.1rem;
     }
 }
-    
+
+@media (min-width: 2561px) {
+    body { font-size: 18px; }
+
+    .links-menu { display: flex !important; flex-direction: row; gap: 20px; }
+    .menu-toggle { display: none !important; }
+
+    .menu-principal {
+        padding: 0 10%;
+    }
+
+    .links-menu a {
+        font-size: 1.2rem;
+        padding: 0.8rem 1.5rem;
+    }
+
+    .hero-banner, .area-triagem, .area-riscos, .flex-equipe, .area-sobre-container {
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-texto h1 { font-size: 4rem; }
+    .hero-texto p { font-size: 1.3rem; }
+    .hero-imagem img { max-width: 550px; }
+
+    .flex-equipe {
+        gap: 40px;
+    }
+
+    .cartao-integrante {
+        flex: 0 0 350px;
+        width: 350px;
+        min-height: 520px;
+    }
+
+    .avatar-container {
+        width: 160px;
+        height: 160px;
+    }
 }

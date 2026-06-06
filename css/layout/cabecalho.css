@@ -1,3 +1,9 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 .cabecalho-principal {
     background-color: #050814;
     border-bottom: 2px solid #1c2841;
@@ -7,37 +13,36 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 3rem;
-    min-height: 80px;
+    padding: 0 2rem;
+    min-height: 80px; 
     background-color: rgba(11, 17, 32, 0.95);
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+    width: 100%;
 }
 
 .cabecalho-mobile {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     width: auto;
 }
 
 .marca-startup {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: bold;
     color: #00d4ff;
-    text-shadow: 0px 0px 10px rgba(0, 212, 255, 0.5);
+    text-shadow: 0px 0px 10px rgba(0,212,255,0.5);
     display: flex;
     align-items: center;
     gap: 12px;
 }
 
 .icone-logo {
-    height: 55px;
-    width: auto;
-    object-fit: contain;
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
-    filter: drop-shadow(0px 0px 12px rgba(0,212,255,0.8));
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    filter: drop-shadow(0px 0px 10px rgba(0,212,255,0.8));
 }
 
 .menu-toggle {
@@ -59,6 +64,7 @@
 .links-menu {
     display: flex;
     gap: 15px;
+    align-items: center;
 }
 
 .links-menu a {
@@ -79,4 +85,4 @@
     border: 1px solid rgba(0, 212, 255, 0.3);
     box-shadow: inset 0px 0px 10px rgba(0, 212, 255, 0.1), 0px 4px 10px rgba(0, 0, 0, 0.3);
     transform: translateY(-2px);
-}           
+}

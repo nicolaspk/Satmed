@@ -20,7 +20,6 @@
                     <span></span>
                 </div>
             </div>
-            
             <div class="links-menu" id="links-menu">
                 <a href="index.html" class="ativo">Início</a>
                 <a href="paginas/sobre.html">Sobre a Solução</a>
@@ -32,43 +31,97 @@
     </header>
 
     <main>
-        <div class="hero-banner">
+        <section class="hero-banner">
             <div class="hero-texto">
                 <h1>Economia Espacial Salvando Vidas</h1>
-                <p>O Satmed conecta vítimas de desastres naturais às equipes de resgate, operando 100% offline via rede de satélites Direct-to-Cell. Quando a cidade apaga, o espaço ilumina.</p>
-                <a href="#area-simulacao" class="btn-ancora">Iniciar Simulação de Resgate</a>
+                <p>O Satmed conecta vítimas de desastres naturais às equipes de resgate, operando 100% offline via rede de satélites Direct-to-Cell. Quando a infraestrutura terrestre colapsa, nossa rede orbital mantém o fluxo de dados vital ativo para missões humanitárias aéreas e terrestres.</p>
+                <a href="#area-simulacao" class="btn-ancora">Acessar Terminal de Emergência</a>
             </div>
             <div class="hero-imagem">
                 <img src="./img/satelite-emergencia.jpg" alt="Ilustração de um satélite enviando sinal de emergência para a Terra">
             </div>
-        </div>
+        </section>
 
         <section id="area-simulacao" class="area-triagem">
             <div class="cabecalho-secao">
-                <h2>Terminal de Triagem D2D</h2>
-                <p>Simulação de Modo Offline. Selecione a situação da vítima para envio do pacote de dados ultraleve.</p>
+                <h2>Terminal de Triagem Orbital D2D</h2>
+                <p>Módulo de simulação offline interativo. Siga os protocolos de segurança para estabelecer a conexão de socorro.</p>
             </div>
-            
-            <form class="formulario-triagem" id="form-triagem">
-                <label for="situacao">Qual a situação clínica atual?</label>
-                <select id="situacao" name="situacao">
-                    <option value="" disabled selected>Selecione a opção que melhor descreve o estado...</option>
-                    <option value="vermelho">🔴 Trauma Severo / Hemorragia Ativa</option>
-                    <option value="amarelo">🟡 Dificuldade Respiratória / Fratura Fechada</option>
-                    <option value="amarelo2">🟡 Risco de Desabamento / Isolamento Total</option>
-                    <option value="verde">🟢 Apenas Escoriações / Em Local Seguro</option>
-                </select>
 
+            <div id="simulacao-passo-1" class="estagio-simulacao">
+                <div class="status-terminal offline">
+                    <p>STATUS: SISTEMA EM ESPERA (OFFLINE)</p>
+                </div>
+                <button type="button" id="btn-inicializar" class="btn-principal">Ativar Terminal de Emergência Satmed</button>
+            </div>
+
+            <div id="simulacao-passo-2" class="estagio-simulacao painel-oculto">
+                <div class="painel-scanner">
+                    <div class="radar-linha"></div>
+                    <p class="texto-scanner">📡 Buscando satélites de telemetria de baixa órbita (LEO)...</p>
+                    <p class="texto-scanner-sub" id="log-scanner">Iniciando varredura de radiofrequência...</p>
+                </div>
+            </div>
+
+            <div id="simulacao-passo-3" class="estagio-simulacao painel-oculto">
                 <div class="dados-rastreio">
-                    <p class="titulo-gps">📍 Coordenadas de GPS Obtidas</p>
-                    <p class="valor-gps">LAT: -23.5505 | LON: -46.6333</p>
-                    <span>Status: Conexão orbital estabelecida. Criptografia ativa.</span>
+                    <p class="titulo-gps">📍 Coordenadas Travadas via Satélite</p>
+                    <p class="valor-gps" id="coordenadas-dinamicas">LAT: --.---- | LON: --.----</p>
+                    <span class="status-link">Conexão orbital criptografada estabelecida com sucesso.</span>
                 </div>
 
-                <button type="button" id="btn-transmitir" class="btn-principal">Transmitir Pedido de Socorro via Satélite</button>
-            </form>
+                <form class="formulario-triagem" id="form-triagem">
+                    <fieldset class="grupo-problemas">
+                        <legend>Selecione todas as condições que se aplicam à situação atual:</legend>
+                        
+                        <div class="caixa-opcao">
+                            <input type="checkbox" id="prob-hemorragia" name="problemas" value="trauma">
+                            <label for="prob-hemorragia">🔴 Trauma Severo / Hemorragia Ativa de Grande Porte</label>
+                        </div>
 
-            <div id="painel-simulacao" class="painel-oculto"></div>
+                        <div class="caixa-opcao">
+                            <input type="checkbox" id="prob-respiratorio" name="problemas" value="respiratorio">
+                            <label for="prob-respiratorio">🔴 Parada ou Dificuldade Respiratória Aguda</label>
+                        </div>
+
+                        <div class="caixa-opcao">
+                            <input type="checkbox" id="prob-fratura" name="problemas" value="urgente">
+                            <label for="prob-fratura">🟡 Suspeita de Fratura Exposta ou Interna Fechada</label>
+                        </div>
+
+                        <div class="caixa-opcao">
+                            <input type="checkbox" id="prob-estrutura" name="problemas" value="isolamento">
+                            <label for="prob-estrutura">🟡 Vítima Presa em Estrutura Colapsada / Risco Iminente</label>
+                        </div>
+
+                        <div class="caixa-opcao">
+                            <input type="checkbox" id="prob-alagamento" name="problemas" value="isolamento">
+                            <label for="prob-alagamento">🟡 Isolamento por Enchente Sem Rota de Fuga Terrestre</label>
+                        </div>
+
+                        <div class="caixa-opcao">
+                            <input type="checkbox" id="prob-estavel" name="problemas" value="estavel">
+                            <label for="prob-estavel">🟢 Apenas Escoriações Leves / Vítima Consciente e Confortável</label>
+                        </div>
+                    </fieldset>
+
+                    <button type="button" id="btn-transmitir" class="btn-principal">Compactar e Transmitir Pacote de Dados D2D</button>
+                </form>
+            </div>
+
+            <div id="simulacao-passo-4" class="estagio-simulacao painel-oculto">
+                <div class="animacao-envio">
+                    <p class="piscar-texto">⚡ Compactando telemetria médica em formato binário ultraleve...</p>
+                    <p class="piscar-texto">🛰️ Transmitindo pacote de socorro para constelação orbital...</p>
+                    <div class="barra-progresso-container">
+                        <div class="barra-progresso-preenchimento"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="simulacao-passo-5" class="estagio-simulacao painel-oculto">
+                <div id="resultado-triagem-dinamico"></div>
+            </div>
         </section>
 
         <section class="area-riscos">
@@ -93,9 +146,7 @@
     </main>
 
     <footer class="rodape-principal">
-        <nav aria-label="Navegação de Rodapé">
-            <p>Global Solution 2026/1 - Economia Espacial | Alinhado aos ODS 9, 11 e 13 da ONU</p>
-        </nav>
+        <p>Global Solution 2026/1 - Economia Espacial | Alinhado aos ODS 9, 11 e 13 da ONU</p>
     </footer>
 
     <script src="./js/script.js"></script>

@@ -3,49 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Satmed - FAQ</title>
-    <link rel="stylesheet" href="../css/main.css">
+    <title>Satmed - Perguntas Frequentes (FAQ)</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/layout/cabecalho.css">
+    <link rel="stylesheet" href="../css/layout/rodape.css">
+    <link rel="stylesheet" href="../css/paginas/faq.css">
 </head>
 <body>
-    <header>
-        <h1>Satmed</h1>
-        <p>Conectando vidas e encurtando distâncias</p>
+    <header class="cabecalho-principal">
         <nav class="menu-principal" aria-label="Navegação Principal">
-            <a href="../index.html">Início</a> |
-            <a href="sobre.html">Sobre a Solução</a> |
-            <a href="faq.html" class="ativo">FAQ</a> |
-            <a href="contato.html">Contato</a> |
-            <a href="integrantes.html">Integrantes</a>
+            <div class="cabecalho-mobile">
+                <a href="../index.html" class="marca-startup" aria-label="Ir para a página inicial">
+                    Satmed
+                    <img src="../img/satelite-emergencia.jpg" alt="Logotipo do Satmed" class="icone-logo">
+                </a>
+                <div class="menu-toggle" id="btn-menu" aria-label="Abrir menu de navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            
+            <div class="links-menu" id="links-menu">
+                <a href="../index.html">Início</a>
+                <a href="sobre.html">Sobre a Solução</a>
+                <a href="faq.html" class="ativo">FAQ</a>
+                <a href="contato.html">Contato</a>
+                <a href="integrantes.html">Integrantes</a>
+            </div>
         </nav>
     </header>
 
     <main>
-        <section class="area-triagem">
-            <h2>Perguntas Frequentes (FAQ)</h2>
-            <p>Tire suas dúvidas sobre o funcionamento do app via satélite.</p>
+        <article class="area-faq-container">
+            
+            <section class="cabecalho-faq">
+                <h2>Perguntas Frequentes</h2>
+                <p>Encontre respostas rápidas sobre o funcionamento, tecnologia e aplicação do Satmed em cenários de emergência.</p>
+            </section>
 
-            <details>
-                <summary>Preciso de internet 4G ou Wi-Fi para usar o Satmed?</summary>
-                <p>Não. O aplicativo utiliza tecnologia Direct-to-Cell (D2D) para enviar pacotes ultraleves de dados diretamente para satélites em órbita baixa, sem depender de torres na Terra.</p>
-            </details>
+            <section class="lista-faq">
+                
+                <details class="item-faq">
+                    <summary>O que é o Satmed e qual a sua principal função?</summary>
+                    <p>O Satmed é um aplicativo de emergência e auto-triagem inteligente projetado para operar em áreas afetadas por desastres naturais ou regiões isoladas.<br><br>Sua função principal é reestabelecer uma ponte de comunicação via satélite de mão dupla entre as vítimas e os centros de resgate médicos urbanos, evitando o isolamento total causado pela queda de redes móveis terrestres.</p>
+                </details>
 
-            <details>
-                <summary>Como o aplicativo define a cor do meu risco?</summary>
-                <p>Ao relatar os sintomas de forma offline, o nosso sistema faz uma triagem automática e classifica seu estado em Vermelho (Emergência Extrema), Amarelo (Atenção/Urgência) ou Verde (Não-urgente/Estável).</p>
-            </details>
+                <details class="item-faq">
+                    <summary>O aplicativo precisa de internet 4G, 5G ou Wi-Fi convencional para funcionar?</summary>
+                    <p><strong>Não.</strong> O Satmed foi desenvolvido especificamente para cenários onde a infraestrutura terrestre entrou em colapso ou é inexistente.<br><br>Toda a coleta de dados de sintomas e localização por GPS é feita de maneira <strong>offline</strong> no aparelho. A transmissão subsequente ocorre diretamente do smartphone para satélites de baixa órbita.</p>
+                </details>
 
-            <details>
-                <summary>A Defesa Civil ou o resgate saberão exatamente onde eu estou?</summary>
-                <p>Sim. Junto com o pacote de texto contendo seus sintomas, o dispositivo empacota e transmite a sua coordenada de GPS atual de forma silenciosa para o painel de resgate.</p>
-            </details>
-        </section>
+                <details class="item-faq">
+                    <summary>O que significa a tecnologia Direct-to-Cell (D2D)?</summary>
+                    <p>A tecnologia <strong>Direct-to-Cell</strong> permite que smartphones comuns conectem-se diretamente a satélites espaciais sem a necessidade de modificações de hardware ou antenas externas adicionais.<br><br>O dispositivo móvel utiliza suas bandas de frequência padrão para se comunicar diretamente com as constelações de satélites na órbita baixa da Terra.</p>
+                </details>
+
+                <details class="item-faq">
+                    <summary>Como funciona o processamento da pré-triagem autônoma?</summary>
+                    <p>Quando a vítima insere seus sintomas de forma offline no aplicativo, algoritmos clínicos locais processam o quadro de saúde diretamente no processador do smartphone.<br><br>O sistema então classifica a gravidade do paciente de <strong>forma autônoma</strong> antes mesmo de enviar o sinal, otimizando o fluxo de dados para a transmissão.</p>
+                </details>
+
+                <details class="item-faq">
+                    <summary>Quais são os três níveis de triagem visual do sistema?</summary>
+                    <p>O sistema organiza o atendimento através de três cores clínicas prioritárias:<br><br><strong>🚨 Risco Vermelho (#001):</strong> Emergências Extremas com perigo iminente de morte.<br><br><strong>⚠️ Risco Amarelo (#002):</strong> Casos de Atenção ou Urgência moderada.<br><br><strong>🟢 Risco Verde (#003):</strong> Casos Não-urgentes ou Pacientes Estáveis.</p>
+                </details>
+
+                <details class="item-faq">
+                    <summary>O que é a comunicação bilateral assíncrona descrita no projeto?</summary>
+                    <p>Trata-se de um canal de mão dupla focado no envio e recebimento de pequenos pacotes de texto estruturado <strong>(beacons)</strong>.<br><br>Ao invés de carregar transmissões pesadas de voz ou vídeo que falhariam em redes espaciais instáveis, o Satmed permite que o médico envie condutas e instruções de primeiros socorros de volta para o celular do usuário de forma leve e garantida.</p>
+                </details>
+
+                <details class="item-faq">
+                    <summary>Como o Satmed ajuda a evitar o colapso dos centros de comando?</summary>
+                    <p>Durante uma catástrofe climática, milhares de mensagens desconexas chegam simultaneamente, gerando caos operacional.<br><br>O Satmed filtra e organiza automaticamente essas requisições, entregando um painel digital com uma fila de espera <strong>ordenada estritamente por critérios médicos</strong> de gravidade real.</p>
+                </details>
+
+                <details class="item-faq">
+                    <summary>Quais Objetivos de Desenvolvimento Sustentável (ODS) da ONU o projeto atende?</summary>
+                    <p>O Satmed está alinhado diretamente com três ODS da ONU:<br><br><strong>📍 ODS 9 (Indústria, Inovação e Infraestrutura):</strong> Ao implementar conectividade resiliente via economia espacial.<br><br><strong>📍 ODS 11 (Cidades e Comunidades Sustentáveis):</strong> Ao manter assistência urbana em colapsos climáticos.<br><br><strong>📍 ODS 13 (Ação Contra a Mudança Global do Clima):</strong> Reduzindo fatalidades em desastres extremos.</p>
+                </details>
+
+            </section>
+
+        </article>
     </main>
 
-    <footer>
-        <nav aria-label="Navegação de Rodapé">
-            <p>Global Solution 2026/1 - Economia Espacial | ODS 9, 11 e 13</p>
-        </nav>
+    <footer class="rodape-principal">
+        <div class="rodape-conteudo">
+            <p>Satmed - Global Solution 2026/1</p>
+            <p>Economia Espacial aplicada à preservação da vida</p>
+        </div>
     </footer>
-    <script src="./js/script.js"></script>
+
+    <script src="../js/script.js"></script>
 </body>
 </html>

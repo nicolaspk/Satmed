@@ -4,48 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Satmed - Contato</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/layout/cabecalho.css">
+    <link rel="stylesheet" href="../css/layout/rodape.css">
+    <link rel="stylesheet" href="../css/paginas/contato.css">
 </head>
 <body>
-    <header>
-        <h1>Satmed</h1>
-        <p>Conectando vidas e encurtando distâncias</p>
-        
+    <header class="cabecalho-principal">
         <nav class="menu-principal" aria-label="Navegação Principal">
-            <a href="../index.html">Início</a> |
-            <a href="sobre.html">Sobre a Solução</a> |
-            <a href="faq.html">FAQ</a> |
-            <a href="contato.html" class="ativo">Contato</a> |
-            <a href="integrantes.html">Integrantes</a>
+            <div class="cabecalho-mobile">
+                <a href="../index.html" class="marca-startup" aria-label="Ir para a página inicial">
+                    Satmed
+                    <img src="../img/satelite-emergencia.jpg" alt="Logotipo do Satmed" class="icone-logo">
+                </a>
+                <div class="menu-toggle" id="btn-menu" aria-label="Abrir menu de navegação">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            
+            <div class="links-menu" id="links-menu">
+                <a href="../index.html">Início</a>
+                <a href="sobre.html">Sobre a Solução</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contato.html" class="ativo">Contato</a>
+                <a href="integrantes.html">Integrantes</a>
+            </div>
         </nav>
     </header>
 
     <main>
-        <section class="area-triagem">
-            <h2>Fale com a Defesa Civil / Suporte Satmed</h2>
-            <p>Em caso de dúvidas sobre a operação do sistema de triagem via satélite, preencha os dados abaixo.</p>
+        <article class="area-contato-container">
             
-            <form>
-                <label for="nome">Nome Completo:</label>
-                <input type="text" id="nome" name="nome" aria-label="Digite seu nome completo">
-                
-                <label for="email">E-mail:</label>
-                <input type="text" id="email" name="email" aria-label="Digite seu e-mail para retorno">
-                
-                <label for="mensagem">Mensagem/Dúvida:</label>
-                <input type="text" id="mensagem" name="mensagem" aria-label="Descreva sua dúvida ou mensagem sobre a tecnologia">
-                
-                <button type="button">Enviar Mensagem</button>
-            </form>
-        </section>
+            <section class="cabecalho-contato">
+                <h2>Contato Oficial</h2>
+                <p>Entre em contato diretamente com a nossa equipe de suporte e desenvolvimento.</p>
+            </section>
+
+            <section class="contato-central">
+                <div class="card-email-unico">
+                    <h3>E-mail de Suporte</h3>
+                    <p>Para dúvidas, suporte técnico, parcerias institucionais ou homologações de sistemas de emergência.</p>
+                    <span class="endereco-email">materiafiap@gmail.com</span>
+                    <a href="https://www.google.com/gmail" class="btn-abrir-email">Abrir E-mail</a>
+                </div>
+            </section>
+
+        </article>
     </main>
 
-    <footer>
-        <nav aria-label="Navegação de Rodapé">
-            <p>Global Solution 2026/1 - Economia Espacial | ODS 9, 11 e 13</p>
-            <a href="index.html">Voltar ao Início</a>
-        </nav>
+    <footer class="rodape-principal">
+        <div class="rodape-conteudo">
+            <p>Satmed - Global Solution 2026/1</p>
+            <p>Economia Espacial aplicada à preservação da vida</p>
+        </div>
     </footer>
-    <script src="./js/script.js"></script>
+
+    <script src="../js/script.js"></script>
 </body>
 </html>

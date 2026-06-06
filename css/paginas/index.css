@@ -178,11 +178,12 @@ nav.menu-principal {
 }
 
 .texto-scanner {
-    font-size: 1.5rem;
+    font-size: 1.15rem;
     color: #00d4ff;
     font-weight: bold;
     margin-bottom: 15px;
     text-shadow: 0px 0px 10px rgba(0, 212, 255, 0.5);
+    white-space: nowrap;
 }
 
 .texto-scanner-sub {
@@ -312,12 +313,13 @@ nav.menu-principal {
 }
 
 .piscar-texto {
-    font-size: 1.4rem;
+    font-size: 1.15rem;
     color: #00d4ff;
     margin: 15px 0;
     font-weight: bold;
     animation: piscar 1.5s infinite;
     text-shadow: 0px 0px 10px rgba(0, 212, 255, 0.6);
+    white-space: nowrap;
 }
 
 @keyframes piscar {
@@ -386,7 +388,7 @@ nav.menu-principal {
     padding: 40px;
     border-radius: 0 0 12px 12px;
     width: 100%;
-    box-sizing: border-box; /* Garante que o padding não aumente o tamanho total */
+    box-sizing: border-box;
 }
 
 .resposta-hospital h4 {
@@ -409,11 +411,11 @@ nav.menu-principal {
 
 .sub-card-resposta {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     background: rgba(11, 17, 32, 0.6);
     border: 1px solid #1c2841;
-    border-left: 8px solid; /* Borda lateral grossa que ganha a cor do tema */
+    border-left: 8px solid;
     border-radius: 8px;
     padding: 25px 30px;
     width: 100%;
@@ -427,26 +429,22 @@ nav.menu-principal {
 }
 
 .sub-card-resposta h5 {
-    flex: 0 0 220px;
     font-size: 1.1rem;
-    margin: 0;
+    margin: 0 0 15px 0;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
-    padding-right: 20px;
-    margin-right: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 15px;
     color: #ffffff;
     font-weight: 700;
+    width: 100%;
 }
 
 .sub-card-resposta p {
-    flex: 1;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     color: #e2e8f0;
     margin: 0;
-    line-height: 1.5;
-    word-wrap: break-word; /* Garante que palavras longas quebrem se necessário */
-    overflow-wrap: break-word;
+    line-height: 1.6;
 }
 
 .sub-card-resposta strong {
@@ -532,8 +530,8 @@ summary {
 }
 
 .niveis-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: 30px;
     margin-top: 40px;
     padding-top: 40px;
@@ -605,4 +603,25 @@ summary {
 
 .painel-oculto {
     display: none !important;
+}
+
+.mensagem-erro {
+    background-color: rgba(244, 67, 54, 0.1);
+    border: 1px dashed #ff4d4d;
+    color: #ff4d4d;
+    padding: 18px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: bold;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    box-shadow: 0px 0px 15px rgba(244, 67, 54, 0.2);
+    animation: piscar-erro 1.5s infinite alternate;
+    white-space: nowrap;
+}
+
+@keyframes piscar-erro {
+    from { box-shadow: 0px 0px 10px rgba(244, 67, 54, 0.2); }
+    to { box-shadow: 0px 0px 25px rgba(244, 67, 54, 0.6); }
 }

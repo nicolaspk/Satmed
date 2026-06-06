@@ -1,12 +1,10 @@
 @import url('style.css');
-
 @import url('layout/cabecalho.css');
 @import url('layout/rodape.css');
-
+@import url('paginas/contato.css');
 @import url('paginas/index.css');
 @import url('paginas/sobre.css');
 @import url('paginas/integrantes.css');
 @import url('paginas/faq.css');
-
 @import url('responsividade/mobile.css');
 @import url('responsividade/tablet.css');

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Satmed - Triagem Espacial</title>
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
     <header class="cabecalho-principal">
@@ -105,13 +105,17 @@
                         </div>
                     </fieldset>
 
+                    <div id="mensagem-erro" class="mensagem-erro painel-oculto">
+                        ⚠️ Protocolo Bloqueado: Selecione ao menos uma condição para compactar o pacote D2D.
+                    </div>
+
                     <button type="button" id="btn-transmitir" class="btn-principal">Compactar e Transmitir Pacote de Dados D2D</button>
                 </form>
             </div>
 
             <div id="simulacao-passo-4" class="estagio-simulacao painel-oculto">
                 <div class="animacao-envio">
-                    <p class="piscar-texto">⚡ Compactando telemetria médica em formato binário ultraleve...</p>
+                    <p class="piscar-texto">⚡ Compactando telemetria médica in formato binário ultraleve...</p>
                     <p class="piscar-texto">🛰️ Transmitindo pacote de socorro para constelação orbital...</p>
                     <div class="barra-progresso-container">
                         <div class="barra-progresso-preenchimento"></div>

@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    // GESTÃO DO MENU MOBILE
     let btnMenu = document.getElementById("btn-menu");
     let linksMenu = document.getElementById("links-menu");
 
@@ -14,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // GESTÃO DOS PASSOS DA SIMULAÇÃO
     let passo1 = document.getElementById("simulacao-passo-1");
     let passo2 = document.getElementById("simulacao-passo-2");
     let passo3 = document.getElementById("simulacao-passo-3");
@@ -26,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let logScanner = document.getElementById("log-scanner");
     let txtCoordenadas = document.getElementById("coordenadas-dinamicas");
     let resultadoDinamico = document.getElementById("resultado-triagem-dinamico");
+    let mensagemErro = document.getElementById("mensagem-erro");
 
     if (btnInicializar && passo1 && passo2 && passo3) {
         btnInicializar.addEventListener("click", function() {
@@ -56,8 +55,14 @@ document.addEventListener("DOMContentLoaded", function() {
             let opcoesMarcadas = document.querySelectorAll('input[name="problemas"]:checked');
             
             if (opcoesMarcadas.length === 0) {
-                alert("Por favor, selecione ao menos uma das opções de ocorrência antes de realizar a transmissão.");
+                if (mensagemErro) {
+                    mensagemErro.classList.remove("painel-oculto");
+                }
                 return;
+            } else {
+                if (mensagemErro) {
+                    mensagemErro.classList.add("painel-oculto");
+                }
             }
 
             passo3.classList.add("painel-oculto");
@@ -85,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 let tituloClassificacao = "";
                 let classeEstilo = "";
-                let themeClass = ""; // Variável nova para pintar os 3 cartões
+                let themeClass = ""; 
                 let statusResgate = "";
                 let orientacaoMedica = "";
                 let tempoEstimado = "";

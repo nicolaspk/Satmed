@@ -151,4 +151,25 @@ document.addEventListener("DOMContentLoaded", function() {
             }, 4000);
         });
     }
+
+    let formContato = document.getElementById("form-contato");
+    let msgSucesso = document.getElementById("msg-sucesso");
+
+    if (formContato) {
+        formContato.addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            let nome = document.getElementById("nome").value;
+            let email = document.getElementById("email").value;
+            sessionStorage.setItem("contatoNome", nome);
+            sessionStorage.setItem("contatoEmail", email);
+
+            msgSucesso.classList.remove("painel-oculto");
+            formContato.reset();
+
+            setTimeout(function() {
+                msgSucesso.classList.add("painel-oculto");
+            }, 4000);
+        });
+    }
 });

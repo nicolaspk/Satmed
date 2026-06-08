@@ -1,75 +1,77 @@
 .area-faq-container {
     background: linear-gradient(135deg, rgba(16, 24, 43, 0.9) 0%, rgba(5, 8, 20, 0.95) 100%);
-    border: 1px solid rgba(0, 212, 255, 0.2);
+    border: 1px solid rgba(0, 212, 255, 0.3);
     border-radius: 12px;
-    padding: 2rem;
+    padding: 2.5rem;
     max-width: 900px;
     margin: 3rem auto;
-    box-shadow: 0px 8px 25px rgba(0, 212, 255, 0.1), inset 0px 0px 10px rgba(0, 212, 255, 0.05);
+    box-shadow: 0px 8px 25px rgba(0, 212, 255, 0.15), inset 0px 0px 15px rgba(0, 212, 255, 0.05);
 }
 
 .cabecalho-faq {
     text-align: center;
-    margin-bottom: 2rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid rgba(0, 212, 255, 0.15);
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(0, 212, 255, 0.2);
 }
 
 .cabecalho-faq h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: #ffffff;
-    text-shadow: 0px 0px 15px rgba(0, 212, 255, 0.5);
-    margin-bottom: 0.5rem;
+    text-shadow: 0px 0px 15px rgba(0, 212, 255, 0.6);
+    margin-bottom: 0.8rem;
     letter-spacing: 1px;
-    text-transform: uppercase;
 }
 
 .cabecalho-faq p {
-    font-size: 1rem;
-    color: #00d4ff;
-    font-weight: bold;
+    font-size: 1.05rem;
+    color: #cccccc;
+    line-height: 1.6;
 }
 
 .lista-faq {
     display: flex;
     flex-direction: column;
-    gap: 0.45rem;
+    gap: 1rem;
 }
+
 .item-faq {
+    padding: 0;
+    width: auto;
+    max-width: none;
+    margin: 0;
     border-radius: 8px;
-    background: rgba(16, 24, 43, 0.6);
-    border: 1px solid rgba(0, 212, 255, 0.1);
-    border-left: 4px solid transparent;
-    transition: transform 0.4s, box-shadow 0.4s, border-color 0.4s, background-color 0.4s;
+    background: rgba(16, 24, 43, 0.75);
+    border: 1px solid rgba(0, 212, 255, 0.15);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    overflow: hidden;
 }
 
 .item-faq:hover {
-    transform: translateX(5px);
-    box-shadow: -3px 6px 15px rgba(0, 0, 0, 0.3);
-    border-left-color: #00d4ff;
-    background: rgba(16, 24, 43, 0.8);
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 15px rgba(0, 212, 255, 0.15);
+    border-color: rgba(0, 212, 255, 0.4);
 }
 
 .item-faq[open] {
-    border-left-color: #00d4ff;
-    border-color: rgba(0, 212, 255, 0.3);
-    box-shadow: 0px 8px 20px rgba(0, 212, 255, 0.15);
-    background: rgba(11, 17, 32, 0.9);
+    border-color: #00d4ff;
+    box-shadow: 0px 8px 20px rgba(0, 212, 255, 0.25);
+    background: rgba(11, 17, 32, 0.95);
 }
 
 .item-faq summary {
-    font-size: 0.75rem;
+    font-size: 1rem;
     font-weight: bold;
-    padding: 0.35rem 2.5rem 0.35rem 1rem;
-    color: #cccccc;
+    padding: 1.2rem 1.5rem;
+    color: #00d4ff;
     cursor: pointer;
     outline: none;
     list-style: none;
-    position: relative;
-    display: block;
-    line-height: 1.2;
-    transition: background-color 0.4s, color 0.4s, text-shadow 0.4s;
-    word-wrap: break-word;
+    transition: background-color 0.3s, color 0.3s, text-shadow 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
 }
 
 .item-faq summary::-webkit-details-marker {
@@ -78,38 +80,38 @@
 
 .item-faq summary::after {
     content: '+';
-    position: absolute;
-    right: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1rem;
+    font-size: 1.4rem;
     color: #00d4ff;
-    font-weight: normal;
-    transition: transform 0.4s, color 0.4s;
+    transition: transform 0.3s;
+    flex-shrink: 0;
 }
 
 .item-faq[open] summary::after {
     content: '-';
     color: #ffffff;
-    transform: translateY(-50%) rotate(180deg);
 }
 
 .item-faq summary:hover {
     color: #ffffff;
-    text-shadow: 0px 0px 8px rgba(0, 212, 255, 0.6);
+    text-shadow: 0px 0px 8px rgba(0, 212, 255, 0.8);
+    background-color: rgba(0, 212, 255, 0.08);
 }
 
 .item-faq[open] summary {
-    color: #00d4ff;
-    border-bottom: 1px solid rgba(0, 212, 255, 0.1);
-    text-shadow: 0px 0px 8px rgba(0, 212, 255, 0.3);
-    background-color: rgba(0, 212, 255, 0.05);
+    background-color: rgba(0, 212, 255, 0.12);
+    color: #ffffff;
+    border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+    text-shadow: 0px 0px 8px rgba(0, 212, 255, 0.5);
 }
 
 .item-faq p {
-    padding: 0.8rem 1rem;
-    font-size: 0.8rem;
-    line-height: 1.5;
+    padding: 1.2rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
     color: #e0e0e0;
-    margin: 0;
-}
+    background-color: rgba(5, 8, 20, 0.4);
+    border-left: 3px solid #00d4ff;
+    margin: 0.8rem;
+    border-radius: 4px;
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+} 

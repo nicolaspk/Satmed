@@ -33,27 +33,27 @@
     background: linear-gradient(180deg, rgba(28, 40, 65, 0.6) 0%, rgba(11, 17, 32, 0.8) 100%);
     border: 1px solid rgba(0, 212, 255, 0.1);
     border-radius: 10px;
-    padding: 2rem;
+    padding: 1.5rem;
     transition: transform 0.4s, box-shadow 0.4s, border 0.4s;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .bloco-info:hover {
-    transform: translateY(-5px) scale(1.01);
+    transform: translateY(-5px);
     box-shadow: 0px 10px 20px rgba(0, 212, 255, 0.15);
     border: 1px solid rgba(0, 212, 255, 0.5);
 }
 
 .bloco-info h3 {
-    font-size: 1.4rem;
+    font-size: 1.25rem;
     color: #00d4ff;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1rem;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
 .bloco-info p {
-    font-size: 1rem;
+    font-size: 0.95rem;
     line-height: 1.6;
     color: #e0e0e0;
 }
@@ -101,85 +101,70 @@
 .acordeao-container {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.5rem;
     margin-top: 1rem;
 }
 
 .acordeao-etapa {
-    border-radius: 8px;
+    border-radius: 6px;
     background: rgba(16, 24, 43, 0.75);
     border: 1px solid rgba(0, 212, 255, 0.12);
     transition: all 0.3s ease;
-    outline: none;
-}
-
-.acordeao-etapa:hover {
-    transform: translateY(-2px);
-    box-shadow: 0px 6px 15px rgba(0, 212, 255, 0.1);
-    border-color: rgba(0, 212, 255, 0.3);
-}
-
-.acordeao-etapa[open] {
-    border-color: #00d4ff;
-    box-shadow: 0px 8px 20px rgba(0, 212, 255, 0.18);
-    background: rgba(11, 17, 32, 0.95);
+    padding: 0;
+    overflow: hidden;
 }
 
 .acordeao-etapa summary {
-    font-size: 1.15rem;
-    font-weight: bold;
-    padding: 1.2rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 1rem;
     color: #00d4ff;
     cursor: pointer;
-    outline: none;
     list-style: none;
-    transition: background-color 0.3s, color 0.3s, text-shadow 0.3s;
-}
-
-.acordeao-etapa summary::-webkit-details-marker {
-    display: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .acordeao-etapa summary::after {
     content: '+';
-    float: right;
-    font-size: 1.4rem;
+    font-size: 1.1rem;
 }
 
 .acordeao-etapa[open] summary::after {
     content: '-';
 }
 
-.acordeao-etapa summary:hover {
-    color: #ffffff;
-    text-shadow: 0px 0px 8px rgba(0, 212, 255, 0.6);
-    background-color: rgba(0, 212, 255, 0.05);
-}
-
-.acordeao-etapa[open] summary {
-    background-color: rgba(0, 212, 255, 0.08);
-    color: #ffffff;
-    border-bottom: 1px solid rgba(0, 212, 255, 0.15);
-    text-shadow: 0px 0px 8px rgba(0, 212, 255, 0.4);
+.acordeao-etapa[open] {
+    border-color: #00d4ff;
+    background: rgba(11, 17, 32, 0.95);
 }
 
 .acordeao-etapa p {
-    padding: 1.2rem;
-    font-size: 1rem;
-    line-height: 1.6;
+    padding: 0.5rem 1rem 1rem 1rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
     color: #e0e0e0;
-    background-color: rgba(5, 8, 20, 0.3);
-    margin: 1rem;
-    border-radius: 4px;
-    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.4);
-    border-left: none;
+    margin: 0 1rem 1rem 1rem;
+    background: rgba(5, 8, 20, 0.5);
+    border-left: 3px solid #00d4ff;
+    border-radius: 0 4px 4px 0;
 }
 
 .acordeao-etapa:nth-of-type(1)[open] summary { border-bottom-color: #00d4ff; color: #00d4ff; }
+.acordeao-etapa:nth-of-type(1) p { border-left-color: #00d4ff; }
+
 .acordeao-etapa:nth-of-type(2)[open] summary { border-bottom-color: #ffcc00; color: #ffcc00; }
+.acordeao-etapa:nth-of-type(2) p { border-left-color: #ffcc00; }
+
 .acordeao-etapa:nth-of-type(3)[open] summary { border-bottom-color: #ff4d4d; color: #ff4d4d; }
+.acordeao-etapa:nth-of-type(3) p { border-left-color: #ff4d4d; }
+
 .acordeao-etapa:nth-of-type(4)[open] summary { border-bottom-color: #00ffcc; color: #00ffcc; }
+.acordeao-etapa:nth-of-type(4) p { border-left-color: #00ffcc; }
+
 .acordeao-etapa:nth-of-type(5)[open] summary { border-bottom-color: #4caf50; color: #4caf50; }
+.acordeao-etapa:nth-of-type(5) p { border-left-color: #4caf50; }
 
 .diferenciais-grid {
     display: flex;

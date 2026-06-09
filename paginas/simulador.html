@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satmed - Triagem Espacial</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+    <header class="cabecalho-principal">
+        <nav class="menu-principal" aria-label="Navegação Principal">
+            <div class="cabecalho-mobile">
+                <a href="../index.html" class="marca-startup" aria-label="Ir para a página inicial">
+                    Satmed
+                    <img src="../assets/satelite-emergencia.jpg" alt="Logo Satmed" class="icone-logo">
+                </a>
+                <div class="menu-toggle" id="btn-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="links-menu" id="links-menu">
+                <a href="../index.html">Início</a>
+                <a href="simulador.html" class="ativo">Simulador</a>
+                <a href="sobre.html">Sobre a Solução</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contato.html">Contato</a>
+                <a href="integrantes.html">Integrantes</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="area-simulacao" class="area-triagem">
+            <div class="cabecalho-secao">
+                <h2>Terminal de Triagem Orbital D2D</h2>
+                <p>Módulo de simulação offline interativo. Siga os protocolos de segurança para estabelecer a conexão de socorro.</p>
+            </div>
+
+            <div id="simulacao-passo-1" class="estagio-simulacao">
+                <div class="status-terminal offline">
+                    <p>STATUS: SISTEMA EM ESPERA (OFFLINE)</p>
+                </div>
+                <button type="button" id="btn-inicializar" class="btn-principal">Ativar Terminal de Emergência Satmed</button>
+            </div>
+
+            <div id="simulacao-passo-2" class="estagio-simulacao painel-oculto">
+                <div class="painel-scanner">
+                    <div class="radar-linha"></div>
+                    <p class="texto-scanner">📡 Buscando satélites de telemetria de baixa órbita (LEO)...</p>
+                    <p class="texto-scanner-sub" id="log-scanner">Iniciando varredura de radiofrequência...</p>
+                </div>
+            </div>
+
+            <div id="simulacao-passo-3" class="estagio-simulacao painel-oculto">
+                <div class="dados-rastreio">
+                    <p class="titulo-gps">📍 Coordenadas Travadas via Satélite</p>
+                    <p class="valor-gps" id="coordenadas-dinamicas">LAT: --.---- | LON: --.----</p>
+                    <span class="status-link">Conexão orbital criptografada estabelecida com sucesso.</span>
+                </div>
+
+                <form class="formulario-triagem" id="form-triagem">
+                    <fieldset class="grupo-problemas">
+                        <legend>Selecione todas as condições que se aplicam à situação atual:</legend>
+                        
+                        <div class="caixa-opcao">
+                            <input type="checkbox" id="prob-hemorragia" name="problemas" value="trauma">
+                            <label for="prob-hemorragia">🔴 Trauma Severo / Hemorragia Ativa de Grande Porte</label>
+                        </div>
+
+                        <div class="caixa-opcao">
+                            <input type="checkbox" id="prob-respiratorio" name="problemas" value="respiratorio">
+                            <label for="prob-respiratorio">🔴 Parada ou Dificuldade Respiratória Aguda</label>
+                        </div>
+
+                        <div class="caixa-opcao">
+                            <input type="checkbox" id="prob-fratura" name="problemas" value="urgente">
+                            <label for="prob-fratura">🟡 Suspeita de Fratura Exposta ou Interna Fechada</label>
+                        </div>
+
+                        <div class="caixa-opcao">
+                            <input type="checkbox" id="prob-estrutura" name="problemas" value="isolamento">
+                            <label for="prob-estrutura">🟡 Vítima Presa em Estrutura Colapsada / Risco Iminente</label>
+                        </div>
+
+                        <div class="caixa-opcao">
+                            <input type="checkbox" id="prob-alagamento" name="problemas" value="isolamento">
+                            <label for="prob-alagamento">🟡 Isolamento por Enchente Sem Rota de Fuga Terrestre</label>
+                        </div>
+
+                        <div class="caixa-opcao">
+                            <input type="checkbox" id="prob-estavel" name="problemas" value="estavel">
+                            <label for="prob-estavel">🟢 Apenas Escoriações Leves / Vítima Consciente e Confortável</label>
+                        </div>
+                    </fieldset>
+
+                    <div id="mensagem-erro" class="mensagem-erro painel-oculto">
+                        ⚠️ Protocolo Bloqueado: Selecione ao menos uma condição para compactar o pacote D2D.
+                    </div>
+
+                    <button type="button" id="btn-transmitir" class="btn-principal">Compactar e Transmitir Pacote de Dados D2D</button>
+                </form>
+            </div>
+
+            <div id="simulacao-passo-4" class="estagio-simulacao painel-oculto">
+                <div class="animacao-envio">
+                    <p class="piscar-texto">⚡ Compactando telemetria médica em formato binário ultraleve...</p>
+                    <p class="piscar-texto">🛰️ Transmitindo pacote de socorro para constelação orbital...</p>
+                    <div class="barra-progresso-container">
+                        <div class="barra-progresso-preenchimento"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="simulacao-passo-5" class="estagio-simulacao painel-oculto">
+                <div id="resultado-triagem-dinamico"></div>
+            </div>
+        </section>
+
+        <section class="area-riscos">
+            <details>
+                <summary>Consultar Manual de Protocolo de Cores (Defesa Civil)</summary>
+                <div class="niveis-container">
+                    <div class="card-risco risco-vermelho">
+                        <h3>🚨 Risco Vermelho (#001)</h3>
+                        <p>Emergência Extrema. Despacho imediato de UTI Móvel ou Helicóptero Aeromédico.</p>
+                    </div>
+                    <div class="card-risco risco-amarelo">
+                        <h3>⚠️ Risco Amarelo (#002)</h3>
+                        <p>Atenção/Urgência. Equipes terrestres direcionadas assim que as vias forem liberadas.</p>
+                    </div>
+                    <div class="card-risco risco-verde">
+                        <h3>🟢 Risco Verde (#003)</h3>
+                        <p>Não-urgente/Estável. Orientação remota ativada. Aguardar resgate secundário.</p>
+                    </div>
+                </div>
+            </details>
+        </section>
+    </main>
+
+   <footer class="rodape-principal">
+        <div class="rodape-conteudo">
+            <p>Satmed - Global Solution 2026/1</p>
+            <p>Economia Espacial aplicada à preservação da vida</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

@@ -8,7 +8,7 @@ body {
     font-family: Arial, sans-serif;
     color: #ffffff;
     background-color: #050814;
-    background-image: url('../img/espaco-fundo.jpg');
+    background-image: url('../assets/espaco-fundo.jpg');
     background-size: cover;
     background-attachment: fixed;
     animation-name: moverFundo;

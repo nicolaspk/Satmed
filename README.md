@@ -69,14 +69,6 @@ GitHub:
 https://github.com/Erick488-maker
 
 
-## Katerine Hildebrand (RM: 569809)
-
-LinkedIn:  
-https://www.linkedin.com/in/katerine-hildebrand-8928752a3/
-
-GitHub:  
-https://github.com/katpeaga
-
 
 ## Maria Eduarda Lopes de Lima (RM: 572425)
 
